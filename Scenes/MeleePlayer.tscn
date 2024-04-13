@@ -1,15 +1,40 @@
-[gd_scene load_steps=11 format=3 uid="uid://6qqr5x4gj3vu"]
+[gd_scene load_steps=18 format=3 uid="uid://6qqr5x4gj3vu"]
 
 [ext_resource type="PackedScene" uid="uid://dayvsl8lxugrp" path="res://Scenes/Player.tscn" id="1_06hr2"]
 [ext_resource type="Texture2D" uid="uid://scxt76ycnlvb" path="res://Resources/janitor-testsheet.png" id="2_v6aal"]
 [ext_resource type="Script" path="res://Scenes/Area2D.gd" id="3_4a23p"]
 [ext_resource type="Texture2D" uid="uid://bvxecakdpxlp" path="res://Resources/broom-weapon.png" id="3_041xw"]
+[ext_resource type="Texture2D" uid="uid://coxgimuunv48b" path="res://Resources/janitor-sheet.png" id="3_v5tsy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q2wpo"]
 atlas = ExtResource("2_v6aal")
 region = Rect2(15, 0, 15, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0t71g"]
+atlas = ExtResource("2_v6aal")
+region = Rect2(0, 0, 15, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a1l8"]
+atlas = ExtResource("3_v5tsy")
+region = Rect2(0, 0, 17, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fscfw"]
+atlas = ExtResource("3_v5tsy")
+region = Rect2(17, 0, 17, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37nd4"]
+atlas = ExtResource("3_v5tsy")
+region = Rect2(34, 0, 17, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j7tr"]
+atlas = ExtResource("3_v5tsy")
+region = Rect2(51, 0, 17, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_namqo"]
+atlas = ExtResource("3_v5tsy")
+region = Rect2(68, 0, 17, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quvnd"]
 atlas = ExtResource("2_v6aal")
 region = Rect2(0, 0, 15, 31)
 
@@ -31,7 +56,25 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8a1l8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fscfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37nd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6j7tr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_namqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quvnd")
+}],
 "loop": true,
 "name": &"walk",
 "speed": 5.0
