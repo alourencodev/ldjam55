@@ -29,6 +29,7 @@ animations = [{
 size = Vector2(3.51273, 9.18224)
 
 [node name="Enemy" type="Area2D"]
+z_index = 1
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_tily0")
