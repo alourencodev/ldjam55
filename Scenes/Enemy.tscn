@@ -1,18 +1,18 @@
 [gd_scene load_steps=8 format=3 uid="uid://cgf1e4oyelhyd"]
 
-[ext_resource type="Script" path="res://Enemy.gd" id="1_1gyl7"]
-[ext_resource type="Texture2D" uid="uid://c0u83hhwfvojy" path="res://Resources/Enemy.png" id="1_6eiw5"]
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_tily0"]
+[ext_resource type="Texture2D" uid="uid://c0u83hhwfvojy" path="res://Resources/Enemy.png" id="2_733u8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jd41x"]
-atlas = ExtResource("1_6eiw5")
+atlas = ExtResource("2_733u8")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nxh5x"]
-atlas = ExtResource("1_6eiw5")
+atlas = ExtResource("2_733u8")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1qpd"]
-atlas = ExtResource("1_6eiw5")
+atlas = ExtResource("2_733u8")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ch7og"]
@@ -43,7 +43,7 @@ size = Vector2(25.7338, 56.8593)
 [node name="Enemy" type="Area2D"]
 collision_layer = 2
 collision_mask = 13
-script = ExtResource("1_1gyl7")
+script = ExtResource("1_tily0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3kfoiwwou2sm"]
+
+[ext_resource type="PackedScene" uid="uid://dayvsl8lxugrp" path="res://Scenes/Player.tscn" id="1_fyihv"]
+[ext_resource type="Script" path="res://Scripts/Ranged.gd" id="2_hnmsu"]
+[ext_resource type="PackedScene" uid="uid://vrebu1oe665n" path="res://Scenes/bullet.tscn" id="3_wvidk"]
+
+[node name="RangedPlayer" instance=ExtResource("1_fyihv")]
+
+[node name="Muzzle" type="Marker2D" parent="." index="3"]
+position = Vector2(-8, -11)
+script = ExtResource("2_hnmsu")
+bullet = ExtResource("3_wvidk")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://48ojkwvmetnb"
-path="res://.godot/imported/104857920.png-378f571b83983b1d1bc837db5c41d75b.ctex"
+uid="uid://ciwjul3vu5lkc"
+path="res://.godot/imported/phoneguy-attack.png-9c6a2997c3eb7e29bebe8890fc0d1f23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://104857920.png"
-dest_files=["res://.godot/imported/104857920.png-378f571b83983b1d1bc837db5c41d75b.ctex"]
+source_file="res://Resources/phoneguy-attack.png"
+dest_files=["res://.godot/imported/phoneguy-attack.png-9c6a2997c3eb7e29bebe8890fc0d1f23.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciwjul3vu5lkc"
-path="res://.godot/imported/phoneguy-attack.png-18608af73f2ae5e84484b0a2b175c49e.ctex"
+uid="uid://xpguqqgoj4e6"
+path="res://.godot/imported/pixil-frame-0.png-71178d4a932eb7bb8de4e892eb0151c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://phoneguy-attack.png"
-dest_files=["res://.godot/imported/phoneguy-attack.png-18608af73f2ae5e84484b0a2b175c49e.ctex"]
+source_file="res://Resources/pixil-frame-0.png"
+dest_files=["res://.godot/imported/pixil-frame-0.png-71178d4a932eb7bb8de4e892eb0151c5.ctex"]
 
 [params]
 

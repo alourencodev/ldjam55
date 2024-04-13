@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://cg8gt3j5ph8pc"]
 
-[ext_resource type="Texture2D" uid="uid://b0lxob3ncc2dq" path="res://Resources/map.png" id="1_f2kd3"]
-[ext_resource type="Texture2D" uid="uid://btmn73a6sc6dl" path="res://Resources/sprite_gray.png" id="1_odal6"]
-[ext_resource type="Texture2D" uid="uid://wrxuspqfcwp8" path="res://Resources/PlaceholderBall.png" id="2_q2ktq"]
-[ext_resource type="Texture2D" uid="uid://bpx8im540veqm" path="res://Resources/BlueButtonPlaceholder.png" id="3_0eu2q"]
-[ext_resource type="Script" path="res://SummonerSelector.gd" id="4_uphwe"]
-[ext_resource type="Script" path="res://SceneChanger.gd" id="5_gif0i"]
-[ext_resource type="PackedScene" uid="uid://cd5s4blmj45dq" path="res://main.tscn" id="7_dy6sy"]
+[ext_resource type="Texture2D" uid="uid://btmn73a6sc6dl" path="res://Resources/sprite_gray.png" id="1_s0nsq"]
+[ext_resource type="Texture2D" uid="uid://b0lxob3ncc2dq" path="res://Resources/map.png" id="2_c1u2g"]
+[ext_resource type="Texture2D" uid="uid://wrxuspqfcwp8" path="res://Resources/PlaceholderBall.png" id="3_4mk2y"]
+[ext_resource type="Script" path="res://Scenes/SummonerSelector.gd" id="4_xkktw"]
+[ext_resource type="Texture2D" uid="uid://bpx8im540veqm" path="res://Resources/BlueButtonPlaceholder.png" id="5_761m1"]
+[ext_resource type="Script" path="res://Scripts/SceneChanger.gd" id="6_eo5vs"]
+[ext_resource type="PackedScene" uid="uid://cd5s4blmj45dq" path="res://Scenes/main.tscn" id="7_0p74h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lxgxc"]
 font_size = 42
@@ -32,7 +32,7 @@ offset_left = -230.0
 offset_right = 230.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_odal6")
+texture = ExtResource("1_s0nsq")
 region_rect = Rect2(6.266, 2.99812, 9.734, 13.0019)
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
@@ -58,7 +58,7 @@ horizontal_alignment = 1
 [node name="Map" type="TextureRect" parent="NinePatchRect/GridContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-texture = ExtResource("1_f2kd3")
+texture = ExtResource("2_c1u2g")
 expand_mode = 5
 
 [node name="TierList" type="ItemList" parent="NinePatchRect/GridContainer"]
@@ -68,24 +68,24 @@ auto_height = true
 item_count = 3
 fixed_icon_size = Vector2i(16, 16)
 item_0/text = "Executive Elite"
-item_0/icon = ExtResource("2_q2ktq")
+item_0/icon = ExtResource("3_4mk2y")
 item_1/text = "Managerial Might"
-item_1/icon = ExtResource("2_q2ktq")
+item_1/icon = ExtResource("3_4mk2y")
 item_2/text = "HR Harmony"
-item_2/icon = ExtResource("2_q2ktq")
-script = ExtResource("4_uphwe")
+item_2/icon = ExtResource("3_4mk2y")
+script = ExtResource("4_xkktw")
 
 [node name="TextureButton" type="TextureButton" parent="NinePatchRect/GridContainer"]
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("3_0eu2q")
-texture_pressed = ExtResource("3_0eu2q")
-texture_hover = ExtResource("3_0eu2q")
-texture_disabled = ExtResource("3_0eu2q")
-texture_focused = ExtResource("3_0eu2q")
+texture_normal = ExtResource("5_761m1")
+texture_pressed = ExtResource("5_761m1")
+texture_hover = ExtResource("5_761m1")
+texture_disabled = ExtResource("5_761m1")
+texture_focused = ExtResource("5_761m1")
 stretch_mode = 3
-script = ExtResource("5_gif0i")
-scene = ExtResource("7_dy6sy")
+script = ExtResource("6_eo5vs")
+scene = ExtResource("7_0p74h")
 
 [node name="Label" type="Label" parent="NinePatchRect/GridContainer/TextureButton"]
 layout_mode = 1
