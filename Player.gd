@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-@export var bullet : PackedScene
 @export var speed = 500
 @export var friction = 0.1
 @export var acceleration = 0.1
@@ -15,21 +14,15 @@ func get_input():
 		input.y += 1
 	if Input.is_action_pressed('up'):
 		input.y -= 1
-	if Input.is_action_just_pressed("click"):
-		shoot()
+
 	return input
 
-func shoot():
-	var b = bullet.instantiate()
-	owner.add_child(b)
-	b.transform = $muzzle.global_transform
 
-
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = get_input()
 	if direction.length() > 0:
 		velocity = velocity.lerp(direction.normalized() * speed, acceleration)
 	else:
 		velocity = velocity.lerp(Vector2.ZERO, friction)
+
 	move_and_slide()
-	

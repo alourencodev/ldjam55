@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bpx8im540veqm" path="res://Resources/BlueButtonPlaceholder.png" id="3_0eu2q"]
 [ext_resource type="Script" path="res://SummonerSelector.gd" id="4_uphwe"]
 [ext_resource type="Script" path="res://SceneChanger.gd" id="5_gif0i"]
-[ext_resource type="PackedScene" uid="uid://ba3n20nceskb1" path="res://Arena.tscn" id="6_w4ag3"]
+[ext_resource type="PackedScene" uid="uid://cd5s4blmj45dq" path="res://main.tscn" id="7_dy6sy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lxgxc"]
 font_size = 42
@@ -85,7 +85,7 @@ texture_disabled = ExtResource("3_0eu2q")
 texture_focused = ExtResource("3_0eu2q")
 stretch_mode = 3
 script = ExtResource("5_gif0i")
-scene = ExtResource("6_w4ag3")
+scene = ExtResource("7_dy6sy")
 
 [node name="Label" type="Label" parent="NinePatchRect/GridContainer/TextureButton"]
 layout_mode = 1
