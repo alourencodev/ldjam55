@@ -4,7 +4,7 @@ extends Node2D
 class_name Enemy;
 
 
-@export var speed = 30
+@export var speed = 200
 
 var target : Node2D
 

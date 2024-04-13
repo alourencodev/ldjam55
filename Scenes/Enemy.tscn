@@ -1,11 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgf1e4oyelhyd"]
+[gd_scene load_steps=7 format=3 uid="uid://cgf1e4oyelhyd"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_tily0"]
 [ext_resource type="Texture2D" uid="uid://c0u83hhwfvojy" path="res://Resources/Enemy.png" id="2_733u8"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jd41x"]
-atlas = ExtResource("2_733u8")
-region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nxh5x"]
 atlas = ExtResource("2_733u8")
@@ -19,14 +15,6 @@ region = Rect2(32, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jd41x")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_nxh5x")
 }, {
 "duration": 1.0,
@@ -38,7 +26,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tesu"]
-size = Vector2(25.7338, 56.8593)
+size = Vector2(3.51273, 9.18224)
 
 [node name="Enemy" type="Area2D"]
 collision_layer = 2
@@ -47,13 +35,13 @@ script = ExtResource("1_tily0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(5, 6.203)
+position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_ch7og")
 animation = &"Walk"
-frame_progress = 0.0283883
+frame_progress = 0.223547
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7.72558, -3.5)
+position = Vector2(-2, -2)
 rotation = -3.14159
 scale = Vector2(2.8468, 2.83155)
 shape = SubResource("RectangleShape2D_0tesu")
