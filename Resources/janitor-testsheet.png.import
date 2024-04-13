@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xpguqqgoj4e6"
-path="res://.godot/imported/pixil-frame-0.png-71178d4a932eb7bb8de4e892eb0151c5.ctex"
+uid="uid://scxt76ycnlvb"
+path="res://.godot/imported/janitor-testsheet.png-1f04d9b1135c9af2e9e6951de60df7b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/pixil-frame-0.png"
-dest_files=["res://.godot/imported/pixil-frame-0.png-71178d4a932eb7bb8de4e892eb0151c5.ctex"]
+source_file="res://Resources/janitor-testsheet.png"
+dest_files=["res://.godot/imported/janitor-testsheet.png-1f04d9b1135c9af2e9e6951de60df7b0.ctex"]
 
 [params]
 
