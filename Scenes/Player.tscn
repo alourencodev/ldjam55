@@ -89,6 +89,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 260
+motion_mode = 1
 script = ExtResource("1_4qh64")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -97,11 +98,11 @@ shape = SubResource("RectangleShape2D_ojaps")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
+scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_ymysb")
 animation = &"walk"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-ignore_rotation = false
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
