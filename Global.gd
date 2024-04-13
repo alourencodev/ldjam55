@@ -1,9 +1,9 @@
 extends Node
 
 enum SummonedTier {
-	EXECUTIVE = 2, 
+	EXECUTIVE = 0, 
 	MANAGER = 1, 
-	HR = 0, 
+	HR = 2, 
 	NONE = -1,
 }
 

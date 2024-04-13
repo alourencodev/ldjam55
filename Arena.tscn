@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba3n20nceskb1"]
+[gd_scene load_steps=5 format=3 uid="uid://ba3n20nceskb1"]
 
 [ext_resource type="Script" path="res://EnemyManager.gd" id="1_0gm2g"]
 [ext_resource type="PackedScene" uid="uid://b1415s6m53hhq" path="res://Enemy.tscn" id="2_swiry"]
+[ext_resource type="PackedScene" uid="uid://bxfsxkkoklkbs" path="res://PlayerSelector.tscn" id="3_i74tw"]
+[ext_resource type="PackedScene" path="res://character_body_2d.tscn" id="4_v2tiv"]
 
 [node name="Arena" type="Node2D"]
 
@@ -23,3 +25,12 @@ position = Vector2(431, 447)
 
 [node name="SpawnPoint4" type="Node2D" parent="SpawnPoints"]
 position = Vector2(841, 316)
+
+[node name="PlayerSelector" parent="." node_paths=PackedStringArray("Player_Spawn_Point") instance=ExtResource("3_i74tw")]
+HR_Players = Array[Resource]([ExtResource("4_v2tiv")])
+Manager_Players = Array[Resource]([ExtResource("4_v2tiv")])
+Executive_Players = Array[Resource]([ExtResource("4_v2tiv")])
+Player_Spawn_Point = NodePath("../PlayerSpawn")
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(583, 209)
