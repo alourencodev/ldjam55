@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://btmn73a6sc6dl" path="res://Resources/sprite_gray.png" id="1_s0nsq"]
 [ext_resource type="Texture2D" uid="uid://b0lxob3ncc2dq" path="res://Resources/map.png" id="2_c1u2g"]
 [ext_resource type="Texture2D" uid="uid://wrxuspqfcwp8" path="res://Resources/PlaceholderBall.png" id="3_4mk2y"]
-[ext_resource type="Script" path="res://Scenes/SummonerSelector.gd" id="4_xkktw"]
+[ext_resource type="Script" path="res://Scripts/SummonerSelector.gd" id="4_xkktw"]
 [ext_resource type="Texture2D" uid="uid://bpx8im540veqm" path="res://Resources/BlueButtonPlaceholder.png" id="5_761m1"]
 [ext_resource type="Script" path="res://Scripts/SceneChanger.gd" id="6_eo5vs"]
-[ext_resource type="PackedScene" uid="uid://cd5s4blmj45dq" path="res://Scenes/main.tscn" id="7_0p74h"]
+[ext_resource type="PackedScene" uid="uid://cd5s4blmj45dq" path="res://Screens/main.tscn" id="7_0p74h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lxgxc"]
 font_size = 42
@@ -32,6 +32,7 @@ offset_left = -230.0
 offset_right = 230.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 1.00414)
 texture = ExtResource("1_s0nsq")
 region_rect = Rect2(6.266, 2.99812, 9.734, 13.0019)
 

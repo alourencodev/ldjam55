@@ -28,10 +28,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tesu"]
 size = Vector2(3.51273, 9.18224)
 
-[node name="Enemy" type="Area2D"]
+[node name="Enemy" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 2
-collision_mask = 13
+collision_mask = 8
 script = ExtResource("1_tily0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
