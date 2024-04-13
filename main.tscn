@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7wb47s8pv728"]
+
+[ext_resource type="Texture2D" uid="uid://c8bnnk5762erg" path="res://sprite.png" id="1_ho1je"]
+[ext_resource type="PackedScene" uid="uid://dwx6tchx2vs0v" path="res://character_body_2d.tscn" id="2_myd41"]
+
+[node name="main" type="Node"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.435294, 0.435294, 0.435294, 1)
+position = Vector2(508, 165)
+scale = Vector2(41.7969, 26.7188)
+texture = ExtResource("1_ho1je")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(572, 405.25)
+scale = Vector2(76.2187, 31.0312)
+texture = ExtResource("1_ho1je")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_myd41")]
+position = Vector2(65, 65)
