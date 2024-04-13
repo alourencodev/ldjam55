@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cg8gt3j5ph8pc"]
+[gd_scene load_steps=9 format=3 uid="uid://cg8gt3j5ph8pc"]
 
 [ext_resource type="Texture2D" uid="uid://b0lxob3ncc2dq" path="res://Resources/map.png" id="1_f2kd3"]
+[ext_resource type="Texture2D" uid="uid://btmn73a6sc6dl" path="res://Resources/sprite_gray.png" id="1_odal6"]
 [ext_resource type="Texture2D" uid="uid://wrxuspqfcwp8" path="res://Resources/PlaceholderBall.png" id="2_q2ktq"]
 [ext_resource type="Texture2D" uid="uid://bpx8im540veqm" path="res://Resources/BlueButtonPlaceholder.png" id="3_0eu2q"]
+[ext_resource type="Script" path="res://SceneChanger.gd" id="5_gif0i"]
+[ext_resource type="PackedScene" uid="uid://ba3n20nceskb1" path="res://Arena.tscn" id="6_w4ag3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lxgxc"]
 font_size = 42
@@ -28,6 +31,7 @@ offset_left = -230.0
 offset_right = 230.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_odal6")
 region_rect = Rect2(6.266, 2.99812, 9.734, 13.0019)
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
@@ -71,12 +75,15 @@ item_2/icon = ExtResource("2_q2ktq")
 
 [node name="TextureButton" type="TextureButton" parent="NinePatchRect/GridContainer"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("3_0eu2q")
 texture_pressed = ExtResource("3_0eu2q")
 texture_hover = ExtResource("3_0eu2q")
 texture_disabled = ExtResource("3_0eu2q")
 texture_focused = ExtResource("3_0eu2q")
 stretch_mode = 3
+script = ExtResource("5_gif0i")
+scene = ExtResource("6_w4ag3")
 
 [node name="Label" type="Label" parent="NinePatchRect/GridContainer/TextureButton"]
 layout_mode = 1
@@ -96,3 +103,6 @@ offset_right = 183.0
 offset_bottom = 55.0
 text = "Productivity Bucks: 1337"
 label_settings = SubResource("LabelSettings_ain88")
+
+[connection signal="item_selected" from="NinePatchRect/GridContainer/TierList" to="NinePatchRect/GridContainer/TextureButton" method="_enable"]
+[connection signal="pressed" from="NinePatchRect/GridContainer/TextureButton" to="NinePatchRect/GridContainer/TextureButton" method="_change_scene"]
