@@ -3,6 +3,11 @@ extends CharacterBody2D
 @export var speed = 500
 @export var friction = 0.1
 @export var acceleration = 0.1
+@export var health = 100
+
+
+signal on_death(position : Vector2)
+
 
 func get_input():
 	var input = Vector2()
@@ -29,3 +34,13 @@ func _physics_process(_delta):
 		velocity = velocity.lerp(Vector2.ZERO, friction)
 
 	move_and_slide()
+
+func handle_hit(damage_amount):
+	apply_damage(damage_amount)
+
+func apply_damage(amount):
+	health -= amount
+	print("Player has ", health, " HP")
+	if (health <= 0):
+		on_death.emit(global_position)
+		queue_free()

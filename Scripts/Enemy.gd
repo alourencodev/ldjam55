@@ -8,7 +8,7 @@ class_name Enemy;
 @export var health = 20
 @export var score = 1
 
-signal on_death(position : Vector2, socore : int)
+signal on_death(position : Vector2, score : int)
 
 var target : Node2D
 
@@ -27,13 +27,17 @@ func _process(delta):
 	direction = direction.normalized()
 	position += direction * speed * delta
 
+	if (direction.x < 0):
+		scale = Vector2(-1.0, 1.0)
+	else:
+		scale = Vector2(1.0, 1.0)
 
 func apply_damage(amount):
 	health -= amount
 	if (health <= 0):
 		on_death.emit(global_position, score)
+		get_node("/root/Global").add_productivity_bucks(score);
 		queue_free()
-
 
 func handle_hit(damage_amount):
 	apply_damage(damage_amount)

@@ -8,3 +8,8 @@ enum SummonedTier {
 }
 
 var summoned_tier = SummonedTier.NONE
+var productivity_bucks = 0
+
+
+func add_productivity_bucks(amount):
+	productivity_bucks += amount
