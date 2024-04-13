@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cg8gt3j5ph8pc"]
 
-[ext_resource type="Texture2D" uid="uid://dlr6d82r5ka1s" path="res://Resources/ptoto_map.png" id="1_6c6io"]
+[ext_resource type="Texture2D" uid="uid://b0lxob3ncc2dq" path="res://Resources/map.png" id="1_f2kd3"]
 [ext_resource type="Texture2D" uid="uid://wrxuspqfcwp8" path="res://Resources/PlaceholderBall.png" id="2_q2ktq"]
 [ext_resource type="Texture2D" uid="uid://bpx8im540veqm" path="res://Resources/BlueButtonPlaceholder.png" id="3_0eu2q"]
 
@@ -46,14 +46,14 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-text = "[TITLE]"
+text = "Layoff Lift"
 label_settings = SubResource("LabelSettings_lxgxc")
 horizontal_alignment = 1
 
 [node name="Map" type="TextureRect" parent="NinePatchRect/GridContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-texture = ExtResource("1_6c6io")
+texture = ExtResource("1_f2kd3")
 expand_mode = 5
 
 [node name="TierList" type="ItemList" parent="NinePatchRect/GridContainer"]
@@ -62,11 +62,11 @@ allow_search = false
 auto_height = true
 item_count = 3
 fixed_icon_size = Vector2i(16, 16)
-item_0/text = "[Tier 3]"
+item_0/text = "Executive Elite"
 item_0/icon = ExtResource("2_q2ktq")
-item_1/text = "[Tier 2]"
+item_1/text = "Managerial Might"
 item_1/icon = ExtResource("2_q2ktq")
-item_2/text = "[Tier 1]"
+item_2/text = "HR Harmony"
 item_2/icon = ExtResource("2_q2ktq")
 
 [node name="TextureButton" type="TextureButton" parent="NinePatchRect/GridContainer"]
@@ -94,5 +94,5 @@ offset_left = 32.0
 offset_top = 32.0
 offset_right = 183.0
 offset_bottom = 55.0
-text = "[Crypto Coin : 1337]"
+text = "Productivity Bucks: 1337"
 label_settings = SubResource("LabelSettings_ain88")
