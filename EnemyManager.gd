@@ -38,4 +38,7 @@ func spawn_enemy():
 	enemy_instance.position = spawn_point.position
 	#TODO: Connect stuff to the enemy
 
+	# TODO: Connect to the actual player!!
+	enemy_instance.target = spawn_points[0]
+
 	add_child(enemy_instance)
