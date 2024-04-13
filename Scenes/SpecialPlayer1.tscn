@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://to77g2ljnxxw"]
+
+[ext_resource type="PackedScene" uid="uid://dayvsl8lxugrp" path="res://Scenes/Player.tscn" id="1_wu0n8"]
+[ext_resource type="Texture2D" uid="uid://bil3fmjf3kdn3" path="res://Resources/coffetest.png" id="2_oifpq"]
+[ext_resource type="Script" path="res://Scenes/Marker2D.gd" id="3_6s6gw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydpub"]
+atlas = ExtResource("2_oifpq")
+region = Rect2(49, 0, 21, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vvhd5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydpub")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Player" instance=ExtResource("1_wu0n8")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0.5, 1)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_vvhd5")
+animation = &"attack"
+
+[node name="grenadehand" type="Marker2D" parent="." index="3"]
+position = Vector2(8, -6)
+scale = Vector2(-0.151721, 0.139444)
+script = ExtResource("3_6s6gw")

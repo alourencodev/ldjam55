@@ -6,6 +6,10 @@
 
 [node name="RangedPlayer" instance=ExtResource("1_fyihv")]
 
+[node name="AnimatedSprite2D" parent="." index="1"]
+frame = 1
+frame_progress = 0.534404
+
 [node name="Muzzle" type="Marker2D" parent="." index="3"]
 position = Vector2(-8, -11)
 script = ExtResource("2_hnmsu")
