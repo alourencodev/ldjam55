@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba3n20nceskb1"]
+
+[ext_resource type="Script" path="res://EnemyManager.gd" id="1_0gm2g"]
+[ext_resource type="PackedScene" uid="uid://b1415s6m53hhq" path="res://Enemy.tscn" id="2_swiry"]
+
+[node name="Arena" type="Node2D"]
+
+[node name="EnemyManager" type="Node" parent="." node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("1_0gm2g")
+enemy_scene = ExtResource("2_swiry")
+spawn_points = [NodePath("../SpawnPoints/SpawnPoint1"), NodePath("../SpawnPoints/SpawnPoint2"), NodePath("../SpawnPoints/SpawnPoint3"), NodePath("../SpawnPoints/SpawnPoint4")]
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="SpawnPoint1" type="Node2D" parent="SpawnPoints"]
+position = Vector2(947, 102)
+
+[node name="SpawnPoint2" type="Node2D" parent="SpawnPoints"]
+position = Vector2(266, 172)
+
+[node name="SpawnPoint3" type="Node2D" parent="SpawnPoints"]
+position = Vector2(431, 447)
+
+[node name="SpawnPoint4" type="Node2D" parent="SpawnPoints"]
+position = Vector2(841, 316)
