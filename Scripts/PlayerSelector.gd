@@ -9,6 +9,9 @@ class_name PlayerSelector;
 @export var Player_Spawn_Point : Marker2D
 
 
+signal on_player_spawned(player : Node2D)
+
+
 func _ready():
 	assert(Player_Spawn_Point != null)
 	assert(!HR_Players.is_empty())
@@ -44,6 +47,5 @@ func _ready():
 	player_instance.position = Player_Spawn_Point.position;
 	add_child(player_instance)
 
-
-	pass # Replace with function body.
+	on_player_spawned.emit(player_instance)
 

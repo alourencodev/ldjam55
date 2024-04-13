@@ -12,6 +12,9 @@ class_name EnemyManager;
 
 @onready var time_to_spawn = warmup_seconds
 
+
+var player : Node2D = null
+
 func _ready():
 	assert(spawn_points.size() > 0)
 	assert(enemy_scene != null)
@@ -19,6 +22,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if player == null:
+		pass
+
 	time_to_spawn -= delta
 
 	if time_to_spawn <= 0.0:
@@ -36,9 +42,10 @@ func spawn_enemy():
 
 	var enemy_instance = enemy_scene.instantiate()
 	enemy_instance.position = spawn_point.position
-	#TODO: Connect stuff to the enemy
-
-	# TODO: Connect to the actual player!!
-	enemy_instance.target = spawn_points[0]
+	enemy_instance.target = player
 
 	add_child(enemy_instance)
+
+
+func _on_player_spawned(player_instance):
+	player = player_instance
