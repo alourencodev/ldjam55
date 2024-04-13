@@ -23,6 +23,6 @@ func _process(delta):
 		time_since_last_attack += delta
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: Node2D):
 		if body.has_method("handle_hit"):
 			body.handle_hit(damage)
