@@ -40,7 +40,7 @@ func _process(delta):
 			current_group_index += 1
 			current_group = groups[current_group_index]
 			time_since_group_upgrade = 0.0
-			print("Upgrading Spawn group to group ", current_group_index, " ", current_group.resource_path)
+			print("Upgrading Spawn group to ", current_group_index, " ", current_group.resource_path)
 
 
 func spawn_enemy():

@@ -28,15 +28,15 @@ func pick_spawn_enemy():
             var now : float = Time.get_ticks_msec() * 0.001
             var time_since_last_spawn = now - definition.last_spawn_timestamp
             if (time_since_last_spawn < definition.min_time_after_spawned):
-                print("Skiped Enemy: ", definition.enemy.resource_path)
+                #print("Skiped Enemy: ", definition.enemy.resource_path)
                 return null
             else:
-                print("Picked Enemy: ", definition.enemy.resource_path)
-                print("   Total weight: ", total_weight)
-                print("   Weight: ", definition.weight)
-                print("   Factor: ", factor)
-                print("   Last Spawn Timestamp: ", definition.last_spawn_timestamp)
-                print("   Now: ", now)
+                #print("Picked Enemy: ", definition.enemy.resource_path)
+                #print("   Total weight: ", total_weight)
+                #print("   Weight: ", definition.weight)
+                #print("   Factor: ", factor)
+                #print("   Last Spawn Timestamp: ", definition.last_spawn_timestamp)
+                #print("   Now: ", now)
 
                 definition.last_spawn_timestamp = now
                 return definition.enemy
