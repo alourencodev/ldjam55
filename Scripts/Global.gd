@@ -13,4 +13,10 @@ var player : CharacterBody2D = null
 
 
 func add_productivity_bucks(amount):
+	assert(amount >= 0)
 	productivity_bucks += amount
+
+func spend_productivity_bucks(amount):
+	assert(amount >= 0)
+	print("Spending ", amount, " PB$")
+	productivity_bucks -= amount
