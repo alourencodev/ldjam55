@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3mbowg6g8oa0"]
+
+[ext_resource type="PackedScene" uid="uid://wbfftkcey1my" path="res://Scenes/Players/MeleePlayer.tscn" id="1_1qmpq"]
+
+[node name="Player" instance=ExtResource("1_1qmpq")]
+speed = 360
+health = 250
+
+[node name="Weapon" parent="." index="3"]
+damage = 68
+attack_cooldown = 0.1
+
+[editable path="Weapon"]

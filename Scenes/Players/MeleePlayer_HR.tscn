@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://xs1j21dahfjo"]
+
+[ext_resource type="PackedScene" uid="uid://wbfftkcey1my" path="res://Scenes/Players/MeleePlayer.tscn" id="1_wb5uw"]
+
+[node name="Player" instance=ExtResource("1_wb5uw")]
+health = 180
+
+[editable path="Weapon"]

@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxfsxkkoklkbs"]
+[gd_scene load_steps=9 format=3 uid="uid://bxfsxkkoklkbs"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerSelector.gd" id="1_k8dgs"]
 [ext_resource type="PackedScene" uid="uid://d25qracssyhin" path="res://Scenes/Players/RangedPlayer_HR.tscn" id="3_6onfp"]
 [ext_resource type="PackedScene" uid="uid://dayvsl8lxugrp" path="res://Scenes/Players/Player.tscn" id="3_n36nf"]
+[ext_resource type="PackedScene" uid="uid://xs1j21dahfjo" path="res://Scenes/Players/MeleePlayer_HR.tscn" id="4_6e4yw"]
 [ext_resource type="PackedScene" uid="uid://r3cw4a8jpm12" path="res://Scenes/Players/RangedPlayer_Mg.tscn" id="4_kf5an"]
 [ext_resource type="PackedScene" uid="uid://d30xrdyvinyyb" path="res://Scenes/Players/RangedPlayer_Exec.tscn" id="5_6do7i"]
+[ext_resource type="PackedScene" uid="uid://csonv64fd8w3y" path="res://Scenes/Players/MeleePlayer_Mg.tscn" id="6_ounwv"]
+[ext_resource type="PackedScene" uid="uid://d3mbowg6g8oa0" path="res://Scenes/Players/MeleePlayer_Exec.tscn" id="8_pcbyw"]
 
 [node name="PlayerSelector" type="Node"]
 script = ExtResource("1_k8dgs")
 DefaultPlayer = ExtResource("3_n36nf")
-HR_Players = Array[PackedScene]([ExtResource("3_6onfp")])
-Manager_Players = Array[PackedScene]([ExtResource("4_kf5an")])
-Executive_Players = Array[PackedScene]([ExtResource("5_6do7i")])
+HR_Players = Array[PackedScene]([ExtResource("3_6onfp"), ExtResource("4_6e4yw")])
+Manager_Players = Array[PackedScene]([ExtResource("4_kf5an"), ExtResource("6_ounwv")])
+Executive_Players = Array[PackedScene]([ExtResource("5_6do7i"), ExtResource("8_pcbyw")])

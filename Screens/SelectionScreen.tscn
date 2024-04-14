@@ -22,7 +22,7 @@ icon = ExtResource("3_4mk2y")
 [sub_resource type="Resource" id="Resource_afg5o"]
 script = ExtResource("5_uspdl")
 label = "Managerial Might"
-price = 40
+price = 30
 icon = ExtResource("3_4mk2y")
 
 [sub_resource type="Resource" id="Resource_l7uti"]
