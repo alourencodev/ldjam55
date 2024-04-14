@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://48ojkwvmetnb" path="res://Resources/104857920.png" id="1_mbyfn"]
 [ext_resource type="PackedScene" uid="uid://bxfsxkkoklkbs" path="res://Scenes/PlayerSelector.tscn" id="2_751al"]
-[ext_resource type="PackedScene" uid="uid://c3kfoiwwou2sm" path="res://Scenes/RangedPlayer.tscn" id="3_5bgp5"]
 [ext_resource type="PackedScene" uid="uid://8eo51e0dyf8t" path="res://Scenes/EnemyManager.tscn" id="3_6pbpg"]
+[ext_resource type="PackedScene" uid="uid://wbfftkcey1my" path="res://Scenes/MeleePlayer.tscn" id="3_dj8yb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxupy"]
 texture = ExtResource("1_mbyfn")
@@ -2893,7 +2893,7 @@ layer_1/tile_data = PackedInt32Array(-65534, 917504, 9, 2, 917504, 10, 65538, 91
 position = Vector2(656, 456)
 
 [node name="PlayerSelector" parent="." node_paths=PackedStringArray("Player_Spawn_Point") instance=ExtResource("2_751al")]
-DefaultPlayer = ExtResource("3_5bgp5")
+DefaultPlayer = ExtResource("3_dj8yb")
 Player_Spawn_Point = NodePath("../PlayerSpawn")
 
 [node name="EnemyManager" parent="." node_paths=PackedStringArray("spawn_points") instance=ExtResource("3_6pbpg")]

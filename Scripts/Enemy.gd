@@ -10,14 +10,12 @@ class_name Enemy;
 
 signal on_death(position : Vector2, score : int)
 
-# FIXME: This target can't be saved here. It has to live in the globals and retrieved everytime.
-#		 Otherwise it might be destroyed and we don't know about it.
-var target : Node2D
-
+@onready var global = get_node("/root/Global")
 
 func _process(delta):
+	var target = global.player
 	if (target == null):
-		pass
+		return
 
 	const target_distance_threshold = 80.0
 
@@ -38,7 +36,7 @@ func apply_damage(amount):
 	health -= amount
 	if (health <= 0):
 		on_death.emit(global_position, score)
-		get_node("/root/Global").add_productivity_bucks(score);
+		global.add_productivity_bucks(score);
 		queue_free()
 
 func handle_hit(damage_amount):

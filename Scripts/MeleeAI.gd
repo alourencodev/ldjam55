@@ -12,7 +12,7 @@ var last_attack = attack_rate
 @onready var attack_distance_sqr = pow(attack_distance, 2)
 
 func _physics_process(delta):
-	var target = owner.target
+	var target = get_node("/root/Global").player
 	if (target == null):
 		return;
 

@@ -9,6 +9,7 @@ enum SummonedTier {
 
 var summoned_tier = SummonedTier.NONE
 var productivity_bucks = 0
+var player : CharacterBody2D = null
 
 
 func add_productivity_bucks(amount):
