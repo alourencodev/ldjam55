@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdi44im7jev7x"]
+[gd_scene load_steps=4 format=3 uid="uid://cdi44im7jev7x"]
 
 [ext_resource type="Texture2D" uid="uid://bpx8im540veqm" path="res://Resources/BlueButtonPlaceholder.png" id="1_do8qu"]
 [ext_resource type="Script" path="res://Scripts/SceneChanger.gd" id="2_jedvt"]
+[ext_resource type="PackedScene" uid="uid://buhicgsdv0vvw" path="res://Scenes/MenuMusic.tscn" id="3_qualb"]
 
 [node name="EndScene" type="Node"]
 
@@ -36,3 +37,5 @@ grow_vertical = 2
 text = "Retry"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MenuMusic" parent="." instance=ExtResource("3_qualb")]
