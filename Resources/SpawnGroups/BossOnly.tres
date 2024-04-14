@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SpawnGroup" load_steps=5 format=3 uid="uid://f2nm31mm2ihj"]
+
+[ext_resource type="PackedScene" uid="uid://bewichg6hh7cs" path="res://Scenes/Enemies/BossEnemy.tscn" id="1_52sdf"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawnDefinition.gd" id="2_qn7he"]
+[ext_resource type="Script" path="res://Scripts/SpawnGroup.gd" id="3_hg0rt"]
+
+[sub_resource type="Resource" id="Resource_21yp0"]
+script = ExtResource("2_qn7he")
+enemy = ExtResource("1_52sdf")
+min_time_after_spawned = 1
+weight = 1.0
+
+[resource]
+script = ExtResource("3_hg0rt")
+definitions = Array[ExtResource("2_qn7he")]([SubResource("Resource_21yp0")])
+min_interval = 0.0
+max_interval = 1.0
+time_until_upgrade = 2.0

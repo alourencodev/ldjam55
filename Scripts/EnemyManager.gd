@@ -10,7 +10,6 @@ class_name EnemyManager;
 @onready var time_to_spawn = warmup_seconds
 @onready var time_since_group_upgrade = -warmup_seconds
 
-var time_since_last_spawn = 0.0
 var current_group : SpawnGroup
 
 
@@ -26,7 +25,6 @@ func _process(delta):
 		return
 
 	# Update timers
-	time_since_last_spawn += delta
 	time_since_group_upgrade += delta
 
 	# Check for spawn
@@ -41,11 +39,12 @@ func _process(delta):
 		if groups.size() > (current_group_index + 1):
 			current_group_index += 1
 			current_group = groups[current_group_index]
-			print("Upgrading Spawn group to group ", current_group_index)
+			time_since_group_upgrade = 0.0
+			print("Upgrading Spawn group to group ", current_group_index, " ", current_group.resource_path)
 
 
 func spawn_enemy():
-	var enemy = current_group.pick_spawn_enemy(time_since_last_spawn)
+	var enemy = current_group.pick_spawn_enemy()
 	if (enemy == null):
 		return
 
@@ -57,8 +56,6 @@ func spawn_enemy():
 	var enemy_instance = enemy.instantiate()
 	enemy_instance.position = spawn_point.position
 	add_child(enemy_instance)
-
-	time_since_last_spawn = 0.0
 
 
 func get_player():

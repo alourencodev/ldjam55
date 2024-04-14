@@ -1,24 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://8eo51e0dyf8t"]
+[gd_scene load_steps=9 format=3 uid="uid://8eo51e0dyf8t"]
 
 [ext_resource type="Script" path="res://Scripts/EnemyManager.gd" id="1_qp1nf"]
-[ext_resource type="PackedScene" uid="uid://br48xfwdtrs5i" path="res://Scenes/Enemies/BasicEnemy.tscn" id="2_1le2y"]
-[ext_resource type="Script" path="res://Scripts/EnemySpawnDefinition.gd" id="3_h6sum"]
-[ext_resource type="Script" path="res://Scripts/SpawnGroup.gd" id="4_6nwgy"]
-
-[sub_resource type="Resource" id="Resource_h7nfe"]
-script = ExtResource("3_h6sum")
-enemy = ExtResource("2_1le2y")
-min_time_after_spawned = 0
-weight = 1.0
-
-[sub_resource type="Resource" id="Resource_gbrtr"]
-script = ExtResource("4_6nwgy")
-definitions = Array[ExtResource("3_h6sum")]([SubResource("Resource_h7nfe")])
-min_interval = 3.0
-max_interval = 4.0
-time_until_upgrade = 10.0
+[ext_resource type="Resource" uid="uid://clnvdcbchrc7m" path="res://Resources/SpawnGroups/OnlyBasic.tres" id="2_ixmi3"]
+[ext_resource type="Resource" uid="uid://n8q26fjbkie6" path="res://Resources/SpawnGroups/BuildUp.tres" id="3_gkx41"]
+[ext_resource type="Resource" uid="uid://n8bd8icl88wn" path="res://Resources/SpawnGroups/StandardWave.tres" id="4_jgota"]
+[ext_resource type="Resource" uid="uid://xlbaab7xikoo" path="res://Resources/SpawnGroups/DoubleBoss.tres" id="6_c0egl"]
+[ext_resource type="Resource" uid="uid://f2nm31mm2ihj" path="res://Resources/SpawnGroups/BossOnly.tres" id="6_pidpm"]
+[ext_resource type="Resource" uid="uid://c8uw7gfh1g1yf" path="res://Resources/SpawnGroups/Endless.tres" id="7_3vnyf"]
+[ext_resource type="Resource" uid="uid://dvakhmjh862i5" path="res://Resources/SpawnGroups/Final.tres" id="7_6lw05"]
 
 [node name="EnemyManager" type="Node"]
 script = ExtResource("1_qp1nf")
-groups = Array[ExtResource("4_6nwgy")]([SubResource("Resource_gbrtr")])
+groups = Array[Resource("res://Scripts/SpawnGroup.gd")]([ExtResource("2_ixmi3"), ExtResource("3_gkx41"), ExtResource("4_jgota"), ExtResource("6_pidpm"), ExtResource("4_jgota"), ExtResource("4_jgota"), ExtResource("6_c0egl"), ExtResource("7_6lw05"), ExtResource("7_3vnyf")])
 warmup_seconds = 3.0

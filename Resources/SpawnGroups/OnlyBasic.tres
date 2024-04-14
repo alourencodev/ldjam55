@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SpawnGroup" load_steps=5 format=3 uid="uid://clnvdcbchrc7m"]
+
+[ext_resource type="PackedScene" uid="uid://br48xfwdtrs5i" path="res://Scenes/Enemies/BasicEnemy.tscn" id="1_2qdnq"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawnDefinition.gd" id="2_ocyp7"]
+[ext_resource type="Script" path="res://Scripts/SpawnGroup.gd" id="3_6y7tq"]
+
+[sub_resource type="Resource" id="Resource_h7nfe"]
+script = ExtResource("2_ocyp7")
+enemy = ExtResource("1_2qdnq")
+min_time_after_spawned = 0
+weight = 1.0
+
+[resource]
+script = ExtResource("3_6y7tq")
+definitions = Array[ExtResource("2_ocyp7")]([SubResource("Resource_h7nfe")])
+min_interval = 3.0
+max_interval = 4.0
+time_until_upgrade = 8.0

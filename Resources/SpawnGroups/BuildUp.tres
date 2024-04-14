@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="SpawnGroup" load_steps=7 format=3 uid="uid://n8q26fjbkie6"]
+
+[ext_resource type="PackedScene" uid="uid://br48xfwdtrs5i" path="res://Scenes/Enemies/BasicEnemy.tscn" id="1_p1i2v"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawnDefinition.gd" id="2_jvr4t"]
+[ext_resource type="PackedScene" uid="uid://drksykumvdqxu" path="res://Scenes/Enemies/MidEnemy.tscn" id="3_k4gl2"]
+[ext_resource type="Script" path="res://Scripts/SpawnGroup.gd" id="4_moymh"]
+
+[sub_resource type="Resource" id="Resource_xxt5f"]
+script = ExtResource("2_jvr4t")
+enemy = ExtResource("1_p1i2v")
+min_time_after_spawned = 0
+weight = 10.0
+
+[sub_resource type="Resource" id="Resource_g58uc"]
+script = ExtResource("2_jvr4t")
+enemy = ExtResource("3_k4gl2")
+min_time_after_spawned = 3
+weight = 1.0
+
+[resource]
+script = ExtResource("4_moymh")
+definitions = Array[ExtResource("2_jvr4t")]([SubResource("Resource_xxt5f"), SubResource("Resource_g58uc")])
+min_interval = 1.0
+max_interval = 3.0
+time_until_upgrade = 14.0

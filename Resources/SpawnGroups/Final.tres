@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="SpawnGroup" load_steps=8 format=3 uid="uid://dvakhmjh862i5"]
+
+[ext_resource type="Script" path="res://Scripts/SpawnGroup.gd" id="1_8poum"]
+[ext_resource type="PackedScene" uid="uid://br48xfwdtrs5i" path="res://Scenes/Enemies/BasicEnemy.tscn" id="1_gq8ab"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawnDefinition.gd" id="2_mdt2v"]
+[ext_resource type="PackedScene" uid="uid://drksykumvdqxu" path="res://Scenes/Enemies/MidEnemy.tscn" id="3_ibuqb"]
+
+[sub_resource type="Resource" id="Resource_lkexq"]
+script = ExtResource("2_mdt2v")
+enemy = ExtResource("1_gq8ab")
+min_time_after_spawned = 0
+weight = 10.0
+
+[sub_resource type="Resource" id="Resource_g6urk"]
+script = ExtResource("2_mdt2v")
+enemy = ExtResource("3_ibuqb")
+min_time_after_spawned = 3
+weight = 5.0
+
+[sub_resource type="Resource" id="Resource_p6ddl"]
+script = ExtResource("2_mdt2v")
+enemy = ExtResource("3_ibuqb")
+min_time_after_spawned = 3
+weight = 2.0
+
+[resource]
+script = ExtResource("1_8poum")
+definitions = Array[ExtResource("2_mdt2v")]([SubResource("Resource_lkexq"), SubResource("Resource_g6urk"), SubResource("Resource_p6ddl")])
+min_interval = 0.5
+max_interval = 3.0
+time_until_upgrade = 30.0
