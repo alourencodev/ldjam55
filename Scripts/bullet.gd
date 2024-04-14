@@ -17,7 +17,6 @@ func _process(delta):
 
 	position += direction * speed * delta
 
-
 func _on_body_entered(body: Node2D):
 	if body.has_method("handle_hit"):
 		body.handle_hit(damage)

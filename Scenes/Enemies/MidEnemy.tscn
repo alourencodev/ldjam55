@@ -3,3 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://cgf1e4oyelhyd" path="res://Scenes/Enemies/Enemy.tscn" id="1_aydnk"]
 
 [node name="Enemy" instance=ExtResource("1_aydnk")]
+
+[connection signal="attack" from="MeleeAI" to="Weapon" method="attack"]
