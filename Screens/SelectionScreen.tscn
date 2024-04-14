@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cg8gt3j5ph8pc"]
+[gd_scene load_steps=10 format=3 uid="uid://cg8gt3j5ph8pc"]
 
 [ext_resource type="Texture2D" uid="uid://btmn73a6sc6dl" path="res://Resources/sprite_gray.png" id="1_s0nsq"]
 [ext_resource type="Texture2D" uid="uid://b0lxob3ncc2dq" path="res://Resources/map.png" id="2_c1u2g"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/SummonerSelector.gd" id="4_xkktw"]
 [ext_resource type="Texture2D" uid="uid://bpx8im540veqm" path="res://Resources/BlueButtonPlaceholder.png" id="5_761m1"]
 [ext_resource type="Script" path="res://Scripts/SceneChanger.gd" id="6_eo5vs"]
+[ext_resource type="Script" path="res://Scripts/PointsLabel.gd" id="7_pcvnb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lxgxc"]
 font_size = 42
@@ -105,6 +106,7 @@ offset_right = 183.0
 offset_bottom = 55.0
 text = "Productivity Bucks: 1337"
 label_settings = SubResource("LabelSettings_ain88")
+script = ExtResource("7_pcvnb")
 
 [connection signal="item_selected" from="NinePatchRect/GridContainer/TierList" to="NinePatchRect/GridContainer/TierList" method="_on_item_selected"]
 [connection signal="item_selected" from="NinePatchRect/GridContainer/TierList" to="NinePatchRect/GridContainer/TextureButton" method="_enable"]
