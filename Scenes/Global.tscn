@@ -19,6 +19,7 @@ script = ExtResource("3_qk6t2")
 
 [node name="Swoosh" type="AudioStreamPlayer2D" parent="AudioManager"]
 stream = ExtResource("3_qpag8")
+volume_db = 20.0
 
 [node name="Hit" type="AudioStreamPlayer2D" parent="AudioManager"]
 stream = ExtResource("5_tb3vg")
@@ -28,3 +29,4 @@ stream = ExtResource("6_6pksb")
 
 [node name="Shoot" type="AudioStreamPlayer2D" parent="AudioManager"]
 stream = ExtResource("7_abro1")
+volume_db = -10.0

@@ -24,5 +24,6 @@ attack_rate = 0.7
 
 [node name="MenuMusic" parent="." index="4" instance=ExtResource("4_ma5cl")]
 stream = ExtResource("5_aewwe")
+volume_db = -5.0
 
 [connection signal="attack" from="MeleeAI" to="Weapon" method="attack"]

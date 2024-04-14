@@ -27,5 +27,6 @@ func shoot():
 	bullet_instance.speed = bullet_speed
 	bullet_instance.damage = damage
 
+	get_node("/root/Global/AudioManager").shoot.play()
 	var manager = get_node("/root/Global/ProjectileManager")
 	manager.shoot(bullet_instance)

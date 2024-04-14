@@ -11,6 +11,7 @@ var time_since_last_attack = attack_cooldown
 func attack():
 	if (time_since_last_attack >= attack_cooldown):
 		anim.play("swing")
+		get_node("/root/Global/AudioManager").swoosh.play()
 		time_since_last_attack = 0.0
 
 
