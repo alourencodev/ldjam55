@@ -14,12 +14,8 @@ signal on_attack()
 func get_input():
 	var input = Vector2()
 	if Input.is_action_pressed('right'):
-		scale = Vector2(1.0, 1.0)
-		rotation = 0.0
 		input.x += 1
 	if Input.is_action_pressed('left'):
-		scale = Vector2(-1.0, 1.0)
-		rotation = 0.0
 		input.x -= 1
 	if Input.is_action_pressed('down'):
 		input.y += 1
@@ -27,6 +23,15 @@ func get_input():
 		input.y -= 1
 
 	return input
+
+func _process(delta):
+	var direction = (get_global_mouse_position() - global_position)
+	if (direction.x < 0):
+		scale = Vector2(-1.0, 1.0)
+	if (direction.x > 0):
+		scale = Vector2(1.0, 1.0)
+
+	rotation = 0.0
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action("Action"):

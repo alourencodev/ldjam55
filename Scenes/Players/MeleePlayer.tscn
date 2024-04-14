@@ -52,7 +52,8 @@ damage = 20
 attack_cooldown = 0.4
 
 [node name="CollisionShape2D" parent="Weapon" index="1"]
-position = Vector2(15, -10)
+position = Vector2(15, -9.5)
+scale = Vector2(1.04493, 0.994087)
 
 [connection signal="on_attack" from="." to="Weapon" method="attack"]
 

@@ -8,6 +8,9 @@
 speed = 300
 health = 40
 
+[node name="CollisionShape2D" parent="." index="0"]
+scale = Vector2(1.24871, 1.66889)
+
 [node name="AnimatedSprite2D" parent="." index="1"]
 z_index = 0
 
