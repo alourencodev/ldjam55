@@ -6,7 +6,7 @@
 
 [node name="Enemy" instance=ExtResource("1_nfei0")]
 speed = 300
-health = 60
+health = 40
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 z_index = 0

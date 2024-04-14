@@ -87,6 +87,8 @@ animations = [{
 }]
 
 [node name="RangedPlayer" instance=ExtResource("1_fyihv")]
+speed = 600
+health = 60
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(-0.5, -0.5)
@@ -95,3 +97,4 @@ position = Vector2(-0.5, -0.5)
 sprite_frames = SubResource("SpriteFrames_dyic2")
 
 [node name="Muzzle" parent="." index="3" instance=ExtResource("4_5gtae")]
+damage = 20
