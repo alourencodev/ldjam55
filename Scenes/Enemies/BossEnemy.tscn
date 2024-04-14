@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bewichg6hh7cs"]
+[gd_scene load_steps=13 format=3 uid="uid://bewichg6hh7cs"]
 
 [ext_resource type="PackedScene" uid="uid://cgf1e4oyelhyd" path="res://Scenes/Enemies/Enemy.tscn" id="1_3sp6p"]
 [ext_resource type="PackedScene" path="res://Scenes/Weapons/BruteWeapon.tscn" id="2_ek7cd"]
 [ext_resource type="Texture2D" uid="uid://cyyuk7qwqxt17" path="res://Resources/sheet-brute.png" id="3_ve0jc"]
 [ext_resource type="PackedScene" uid="uid://ret4dyr7kiml" path="res://Scenes/MeleeAI.tscn" id="4_j2bhg"]
+[ext_resource type="PackedScene" uid="uid://buhicgsdv0vvw" path="res://Scenes/MenuMusic.tscn" id="5_yyfys"]
+[ext_resource type="AudioStream" uid="uid://dvcoi14n1nyjl" path="res://Resources/Audio/Boss.mp3" id="6_berto"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4rsw6"]
 atlas = ExtResource("3_ve0jc")
@@ -88,5 +90,8 @@ flip_h = false
 
 [node name="MeleeAI" parent="." index="3" instance=ExtResource("4_j2bhg")]
 attack_distance = 26.0
+
+[node name="MenuMusic" parent="." index="4" instance=ExtResource("5_yyfys")]
+stream = ExtResource("6_berto")
 
 [connection signal="attack" from="MeleeAI" to="BossWeapon" method="attack"]

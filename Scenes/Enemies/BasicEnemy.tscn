@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://br48xfwdtrs5i"]
+[gd_scene load_steps=6 format=3 uid="uid://br48xfwdtrs5i"]
 
 [ext_resource type="PackedScene" uid="uid://cgf1e4oyelhyd" path="res://Scenes/Enemies/Enemy.tscn" id="1_nfei0"]
+[ext_resource type="PackedScene" uid="uid://buhicgsdv0vvw" path="res://Scenes/MenuMusic.tscn" id="2_wx0fe"]
 [ext_resource type="PackedScene" uid="uid://ret4dyr7kiml" path="res://Scenes/MeleeAI.tscn" id="3_adax5"]
 [ext_resource type="PackedScene" uid="uid://bbka7nqe77a14" path="res://Scenes/Weapons/MeleeWeapon.tscn" id="3_ayisp"]
+[ext_resource type="AudioStream" uid="uid://c6ev7h3ko62eh" path="res://Resources/Audio/Mumble1.wav" id="3_fp8og"]
 
 [node name="Enemy" instance=ExtResource("1_nfei0")]
 scale = Vector2(1.00109, 0.994328)
@@ -10,20 +12,23 @@ speed = 300
 health = 40
 score = 2
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="MenuMusic" parent="." index="0" instance=ExtResource("2_wx0fe")]
+stream = ExtResource("3_fp8og")
+
+[node name="CollisionShape2D" parent="." index="1"]
 scale = Vector2(1.24871, 1.66889)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="2"]
 z_index = 0
 
-[node name="Weapon" parent="." index="2" instance=ExtResource("3_ayisp")]
+[node name="Weapon" parent="." index="3" instance=ExtResource("3_ayisp")]
 position = Vector2(-1, -2)
 collision_layer = 256
 collision_mask = 1
 damage = 6
 attack_cooldown = 1.2
 
-[node name="MeleeAI" parent="." index="3" instance=ExtResource("3_adax5")]
+[node name="MeleeAI" parent="." index="4" instance=ExtResource("3_adax5")]
 attack_rate = 1.0
 
 [connection signal="attack" from="MeleeAI" to="Weapon" method="attack"]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://drksykumvdqxu"]
+[gd_scene load_steps=6 format=3 uid="uid://drksykumvdqxu"]
 
 [ext_resource type="PackedScene" uid="uid://cgf1e4oyelhyd" path="res://Scenes/Enemies/Enemy.tscn" id="1_aydnk"]
 [ext_resource type="PackedScene" uid="uid://bbka7nqe77a14" path="res://Scenes/Weapons/MeleeWeapon.tscn" id="2_25kyw"]
 [ext_resource type="PackedScene" uid="uid://ret4dyr7kiml" path="res://Scenes/MeleeAI.tscn" id="3_6ltmj"]
+[ext_resource type="PackedScene" uid="uid://buhicgsdv0vvw" path="res://Scenes/MenuMusic.tscn" id="4_ma5cl"]
+[ext_resource type="AudioStream" uid="uid://d5wit8utsxi3" path="res://Resources/Audio/mumble2.wav" id="5_aewwe"]
 
 [node name="Enemy" instance=ExtResource("1_aydnk")]
 speed = 400
@@ -19,5 +21,8 @@ damage = 12
 
 [node name="MeleeAI" parent="." index="3" instance=ExtResource("3_6ltmj")]
 attack_rate = 0.7
+
+[node name="MenuMusic" parent="." index="4" instance=ExtResource("4_ma5cl")]
+stream = ExtResource("5_aewwe")
 
 [connection signal="attack" from="MeleeAI" to="Weapon" method="attack"]

@@ -1,10 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0ad8qr5t6lxy"]
+[gd_scene load_steps=8 format=3 uid="uid://b0ad8qr5t6lxy"]
 
 [ext_resource type="Script" path="res://Scripts/Global.gd" id="1_bgriy"]
 [ext_resource type="Script" path="res://Scripts/ProjectileManager.gd" id="2_dmbal"]
+[ext_resource type="Script" path="res://Scenes/AudioManager.gd" id="3_qk6t2"]
+[ext_resource type="AudioStream" uid="uid://bumfjpk21upa3" path="res://Resources/Audio/Swoosh.wav" id="3_qpag8"]
+[ext_resource type="AudioStream" uid="uid://biecijtmj3d1g" path="res://Resources/Audio/Hit.mp3" id="5_tb3vg"]
+[ext_resource type="AudioStream" uid="uid://byuntjdofqrdg" path="res://Resources/Audio/Damage.wav" id="6_6pksb"]
+[ext_resource type="AudioStream" uid="uid://c6mu5sun2uhr8" path="res://Resources/Audio/Shoot.wav" id="7_abro1"]
 
 [node name="Global" type="Node"]
 script = ExtResource("1_bgriy")
 
 [node name="ProjectileManager" type="Node2D" parent="."]
 script = ExtResource("2_dmbal")
+
+[node name="AudioManager" type="Node" parent="."]
+script = ExtResource("3_qk6t2")
+
+[node name="Swoosh" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("3_qpag8")
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("5_tb3vg")
+
+[node name="Damage" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("6_6pksb")
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource("7_abro1")
