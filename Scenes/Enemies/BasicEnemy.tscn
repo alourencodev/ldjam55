@@ -5,8 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bbka7nqe77a14" path="res://Scenes/Weapons/MeleeWeapon.tscn" id="3_ayisp"]
 
 [node name="Enemy" instance=ExtResource("1_nfei0")]
+scale = Vector2(1.00109, 0.994328)
 speed = 300
 health = 40
+score = 2
 
 [node name="CollisionShape2D" parent="." index="0"]
 scale = Vector2(1.24871, 1.66889)
