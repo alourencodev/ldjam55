@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://vrebu1oe665n"]
 
-[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_g77hj"]
-[ext_resource type="Texture2D" uid="uid://ciwjul3vu5lkc" path="res://Resources/phoneguy-attack.png" id="2_gfbyv"]
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_gtlkq"]
+[ext_resource type="Texture2D" uid="uid://ciwjul3vu5lkc" path="res://Resources/phoneguy-attack.png" id="2_axtaa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pag8w"]
 radius = 7.07107
 
 [node name="bullet" type="Area2D"]
 z_index = 3
-script = ExtResource("1_g77hj")
+script = ExtResource("1_gtlkq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_gfbyv")
+texture = ExtResource("2_axtaa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pag8w")

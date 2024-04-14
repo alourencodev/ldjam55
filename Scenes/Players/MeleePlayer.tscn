@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://wbfftkcey1my"]
 
-[ext_resource type="PackedScene" uid="uid://dayvsl8lxugrp" path="res://Scenes/Player.tscn" id="1_06hr2"]
+[ext_resource type="PackedScene" uid="uid://dayvsl8lxugrp" path="res://Scenes/Players/Player.tscn" id="1_06hr2"]
 [ext_resource type="Texture2D" uid="uid://scxt76ycnlvb" path="res://Resources/janitor-testsheet.png" id="2_v6aal"]
-[ext_resource type="PackedScene" uid="uid://bbka7nqe77a14" path="res://Scenes/Weapon.tscn" id="3_mqn1s"]
+[ext_resource type="PackedScene" uid="uid://bbka7nqe77a14" path="res://Scenes/Weapons/MeleeWeapon.tscn" id="3_mqn1s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q2wpo"]
 atlas = ExtResource("2_v6aal")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bivavdj3bouj6"]
+
+[ext_resource type="Script" path="res://Scripts/Ranged.gd" id="1_d8551"]
+[ext_resource type="PackedScene" uid="uid://vrebu1oe665n" path="res://Scenes/Weapons/Bullet.tscn" id="2_2pemb"]
+
+[node name="Muzzle" type="Marker2D"]
+position = Vector2(-8, -11)
+script = ExtResource("1_d8551")
+bullet = ExtResource("2_2pemb")
+fire_rate = 0.5

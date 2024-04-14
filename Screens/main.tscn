@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://cd5s4blmj45dq"]
 
 [ext_resource type="Texture2D" uid="uid://48ojkwvmetnb" path="res://Resources/104857920.png" id="1_mbyfn"]
-[ext_resource type="PackedScene" uid="uid://bxfsxkkoklkbs" path="res://Scenes/PlayerSelector.tscn" id="2_751al"]
-[ext_resource type="PackedScene" uid="uid://8eo51e0dyf8t" path="res://Scenes/EnemyManager.tscn" id="3_6pbpg"]
-[ext_resource type="PackedScene" uid="uid://wbfftkcey1my" path="res://Scenes/MeleePlayer.tscn" id="3_dj8yb"]
+[ext_resource type="PackedScene" uid="uid://bxfsxkkoklkbs" path="res://Scenes/Players/PlayerSelector.tscn" id="2_751al"]
+[ext_resource type="PackedScene" uid="uid://8eo51e0dyf8t" path="res://Scenes/Enemies/EnemyManager.tscn" id="3_6pbpg"]
+[ext_resource type="PackedScene" uid="uid://wbfftkcey1my" path="res://Scenes/Players/MeleePlayer.tscn" id="3_dj8yb"]
 [ext_resource type="PackedScene" uid="uid://buhicgsdv0vvw" path="res://Scenes/MenuMusic.tscn" id="5_6hv70"]
 [ext_resource type="AudioStream" uid="uid://dxitarsthh8f7" path="res://Resources/Audio/IngameSong.mp3" id="6_jkxp8"]
 

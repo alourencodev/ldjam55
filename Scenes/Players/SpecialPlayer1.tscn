@@ -1,10 +1,10 @@
 [gd_scene load_steps=22 format=3 uid="uid://to77g2ljnxxw"]
 
-[ext_resource type="PackedScene" uid="uid://dayvsl8lxugrp" path="res://Scenes/Player.tscn" id="1_wu0n8"]
+[ext_resource type="PackedScene" uid="uid://dayvsl8lxugrp" path="res://Scenes/Players/Player.tscn" id="1_wu0n8"]
 [ext_resource type="Texture2D" uid="uid://cg380jroehnqw" path="res://Resources/coffe-walk-sheet.png" id="3_1mowl"]
 [ext_resource type="Script" path="res://Scripts/Marker2D.gd" id="3_6s6gw"]
 [ext_resource type="Texture2D" uid="uid://cbmhlsn10hw2q" path="res://Resources/coffe-sheet.png" id="3_m1edm"]
-[ext_resource type="PackedScene" uid="uid://dvdi2jcfll7sq" path="res://Scenes/grenade.tscn" id="5_barh8"]
+[ext_resource type="PackedScene" uid="uid://dvdi2jcfll7sq" path="res://Scenes/Weapons/Grenade.tscn" id="5_barh8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lh01w"]
 atlas = ExtResource("3_m1edm")
