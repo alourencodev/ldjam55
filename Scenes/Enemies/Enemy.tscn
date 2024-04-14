@@ -1,35 +1,54 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgf1e4oyelhyd"]
+[gd_scene load_steps=11 format=3 uid="uid://cgf1e4oyelhyd"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_tily0"]
-[ext_resource type="Texture2D" uid="uid://c0u83hhwfvojy" path="res://Resources/Enemy.png" id="2_733u8"]
+[ext_resource type="Texture2D" uid="uid://dh2e1yitos3b5" path="res://Resources/zombie-sheet.png" id="2_5ocv8"]
 [ext_resource type="Script" path="res://Scripts/AutoPlayAnimatedSprite.gd" id="3_r0gnt"]
-[ext_resource type="Script" path="res://Scripts/MeleeAI.gd" id="4_6qklj"]
-[ext_resource type="PackedScene" uid="uid://bbka7nqe77a14" path="res://Scenes/Weapons/MeleeWeapon.tscn" id="4_cco2l"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nxh5x"]
-atlas = ExtResource("2_733u8")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tesu"]
+size = Vector2(12.997, 16.2455)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y1qpd"]
-atlas = ExtResource("2_733u8")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsa6u"]
+atlas = ExtResource("2_5ocv8")
+region = Rect2(67, 0, 16, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymef8"]
+atlas = ExtResource("2_5ocv8")
+region = Rect2(49, 0, 16, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvh7q"]
+atlas = ExtResource("2_5ocv8")
+region = Rect2(32, 0, 16, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvsxx"]
+atlas = ExtResource("2_5ocv8")
+region = Rect2(16, 0, 16, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jj360"]
+atlas = ExtResource("2_5ocv8")
+region = Rect2(0, 0, 16, 29)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ch7og"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nxh5x")
+"texture": SubResource("AtlasTexture_lsa6u")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y1qpd")
+"texture": SubResource("AtlasTexture_ymef8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvh7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvsxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jj360")
 }],
 "loop": true,
 "name": &"Walk",
 "speed": 5.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tesu"]
-size = Vector2(4.56653, 10.2417)
 
 [node name="Enemy" type="CharacterBody2D"]
 z_index = 1
@@ -37,27 +56,19 @@ collision_layer = 2
 collision_mask = 8
 script = ExtResource("1_tily0")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(0, -1)
-sprite_frames = SubResource("SpriteFrames_ch7og")
-animation = &"Walk"
-frame_progress = 0.0694468
-script = ExtResource("3_r0gnt")
-animation_label = "Walk"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.50003, -0.500016)
 rotation = -3.14159
 scale = Vector2(2.8468, 2.83155)
 shape = SubResource("RectangleShape2D_0tesu")
 
-[node name="Weapon" parent="." instance=ExtResource("4_cco2l")]
-collision_layer = 256
-collision_mask = 1
-
-[node name="MeleeAI" type="Node" parent="."]
-script = ExtResource("4_6qklj")
-
-[connection signal="attack" from="MeleeAI" to="Weapon" method="attack"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_ch7og")
+animation = &"Walk"
+frame_progress = 0.237758
+flip_h = true
+script = ExtResource("3_r0gnt")
+animation_label = "Walk"

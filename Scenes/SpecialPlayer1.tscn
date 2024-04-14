@@ -144,9 +144,10 @@ position = Vector2(0.5, 1)
 sprite_frames = SubResource("SpriteFrames_vvhd5")
 frame = 3
 frame_progress = 0.857342
+flip_h = true
 
 [node name="grenadehand" type="Marker2D" parent="." index="3"]
-position = Vector2(8, -6)
+position = Vector2(-8, -6)
 scale = Vector2(-0.151721, 0.139444)
 script = ExtResource("3_6s6gw")
 grenade = ExtResource("5_barh8")
