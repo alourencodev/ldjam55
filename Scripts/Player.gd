@@ -52,6 +52,7 @@ func handle_hit(damage_amount):
 func apply_damage(amount):
 	health -= amount
 	print("Player has ", health, " HP")
+	get_node("/root/Global/AudioManager").damage.play()
 	if (health <= 0):
 		on_death.emit(global_position)
 		queue_free()
