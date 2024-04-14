@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var end_screen : PackedScene
 @export var speed = 500
 @export var friction = 0.1
 @export var acceleration = 0.1
@@ -44,3 +45,4 @@ func apply_damage(amount):
 	if (health <= 0):
 		on_death.emit(global_position)
 		queue_free()
+		get_tree().change_scene_to_packed(end_screen)

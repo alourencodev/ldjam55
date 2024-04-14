@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cg8gt3j5ph8pc"]
+[gd_scene load_steps=9 format=3 uid="uid://cg8gt3j5ph8pc"]
 
 [ext_resource type="Texture2D" uid="uid://btmn73a6sc6dl" path="res://Resources/sprite_gray.png" id="1_s0nsq"]
 [ext_resource type="Texture2D" uid="uid://b0lxob3ncc2dq" path="res://Resources/map.png" id="2_c1u2g"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://Scripts/SummonerSelector.gd" id="4_xkktw"]
 [ext_resource type="Texture2D" uid="uid://bpx8im540veqm" path="res://Resources/BlueButtonPlaceholder.png" id="5_761m1"]
 [ext_resource type="Script" path="res://Scripts/SceneChanger.gd" id="6_eo5vs"]
-[ext_resource type="PackedScene" uid="uid://cd5s4blmj45dq" path="res://Screens/main.tscn" id="7_0p74h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lxgxc"]
 font_size = 42
@@ -86,7 +85,7 @@ texture_disabled = ExtResource("5_761m1")
 texture_focused = ExtResource("5_761m1")
 stretch_mode = 3
 script = ExtResource("6_eo5vs")
-scene = ExtResource("7_0p74h")
+scene_name = "main.tscn"
 
 [node name="Label" type="Label" parent="NinePatchRect/GridContainer/TextureButton"]
 layout_mode = 1

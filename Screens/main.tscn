@@ -2924,5 +2924,3 @@ position = Vector2(1056, 504)
 
 [node name="SpawnPoint8" type="Marker2D" parent="EnemySpawnPoints"]
 position = Vector2(648, 560)
-
-[connection signal="on_player_spawned" from="PlayerSelector" to="EnemyManager" method="_on_player_spawned"]
