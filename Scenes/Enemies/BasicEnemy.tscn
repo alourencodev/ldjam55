@@ -1,5 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://br48xfwdtrs5i"]
+[gd_scene load_steps=4 format=3 uid="uid://br48xfwdtrs5i"]
 
 [ext_resource type="PackedScene" uid="uid://cgf1e4oyelhyd" path="res://Scenes/Enemies/Enemy.tscn" id="1_nfei0"]
+[ext_resource type="Script" path="res://Scripts/MeleeAI.gd" id="2_ke02v"]
+[ext_resource type="PackedScene" uid="uid://bbka7nqe77a14" path="res://Scenes/Weapons/MeleeWeapon.tscn" id="3_ayisp"]
 
 [node name="Enemy" instance=ExtResource("1_nfei0")]
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+z_index = 0
+
+[node name="Weapon" parent="." index="2" instance=ExtResource("3_ayisp")]
+position = Vector2(-1, -2)
+
+[node name="MeleeAI" type="Node" parent="." index="3"]
+script = ExtResource("2_ke02v")

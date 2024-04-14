@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://gs36jhhcvljj"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_4qh64"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojaps"]
+size = Vector2(15, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ymysb"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Player3" type="CharacterBody2D"]
+script = ExtResource("1_4qh64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_ojaps")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ymysb")
+animation = &"attack"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
