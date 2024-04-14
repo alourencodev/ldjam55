@@ -21,6 +21,7 @@ position = Vector2(-1, -2)
 collision_layer = 256
 collision_mask = 1
 damage = 6
+attack_cooldown = 1.2
 
 [node name="MeleeAI" parent="." index="3" instance=ExtResource("3_adax5")]
 attack_rate = 1.0

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://r3cw4a8jpm12"]
+
+[ext_resource type="PackedScene" uid="uid://c3kfoiwwou2sm" path="res://Scenes/Players/RangedPlayer.tscn" id="1_81bdi"]
+
+[node name="RangedPlayer" instance=ExtResource("1_81bdi")]
+speed = 640
+health = 70
+
+[node name="Muzzle" parent="." index="3"]
+fire_rate = 0.3
+damage = 25
