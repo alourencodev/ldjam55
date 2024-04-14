@@ -1,7 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://drksykumvdqxu"]
+[gd_scene load_steps=4 format=3 uid="uid://drksykumvdqxu"]
 
 [ext_resource type="PackedScene" uid="uid://cgf1e4oyelhyd" path="res://Scenes/Enemies/Enemy.tscn" id="1_aydnk"]
+[ext_resource type="PackedScene" uid="uid://bbka7nqe77a14" path="res://Scenes/Weapons/MeleeWeapon.tscn" id="2_25kyw"]
+[ext_resource type="PackedScene" uid="uid://ret4dyr7kiml" path="res://Scenes/MeleeAI.tscn" id="3_6ltmj"]
 
 [node name="Enemy" instance=ExtResource("1_aydnk")]
+speed = 400
+score = 2
+
+[node name="Weapon" parent="." index="2" instance=ExtResource("2_25kyw")]
+position = Vector2(-1, -2)
+collision_layer = 256
+collision_mask = 1
+damage = 12
+
+[node name="MeleeAI" parent="." index="3" instance=ExtResource("3_6ltmj")]
+attack_rate = 0.7
 
 [connection signal="attack" from="MeleeAI" to="Weapon" method="attack"]

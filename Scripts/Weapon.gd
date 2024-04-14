@@ -8,10 +8,6 @@ extends Area2D
 
 var time_since_last_attack = attack_cooldown
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action("Action"):
-		attack()
-
 func attack():
 	if (time_since_last_attack >= attack_cooldown):
 		anim.play("swing")
@@ -24,5 +20,5 @@ func _process(delta):
 
 
 func _on_body_entered(body: Node2D):
-		if body.has_method("handle_hit"):
-			body.handle_hit(damage)
+	if body.has_method("handle_hit"):
+		body.handle_hit(damage)

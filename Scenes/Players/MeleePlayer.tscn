@@ -45,3 +45,5 @@ animation = &"attack"
 [node name="Weapon" parent="." index="3" instance=ExtResource("3_mqn1s")]
 collision_layer = 8
 collision_mask = 2
+
+[connection signal="on_attack" from="." to="Weapon" method="attack"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ret4dyr7kiml"]
+
+[ext_resource type="Script" path="res://Scripts/MeleeAI.gd" id="1_de2ms"]
+
+[node name="MeleeAI" type="Node"]
+script = ExtResource("1_de2ms")

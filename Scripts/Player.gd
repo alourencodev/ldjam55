@@ -8,6 +8,7 @@ extends CharacterBody2D
 
 
 signal on_death(position : Vector2)
+signal on_attack()
 
 
 func get_input():
@@ -26,6 +27,10 @@ func get_input():
 		input.y -= 1
 
 	return input
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action("Action"):
+		on_attack.emit()
 
 func _physics_process(_delta):
 	var direction = get_input()

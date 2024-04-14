@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://bewichg6hh7cs"]
 
 [ext_resource type="PackedScene" uid="uid://cgf1e4oyelhyd" path="res://Scenes/Enemies/Enemy.tscn" id="1_3sp6p"]
-[ext_resource type="PackedScene" uid="uid://tqfvx3wsq75" path="res://Scenes/Weapons/BruteWeapon.tscn" id="2_ek7cd"]
+[ext_resource type="PackedScene" path="res://Scenes/Weapons/BruteWeapon.tscn" id="2_ek7cd"]
 [ext_resource type="Texture2D" uid="uid://cyyuk7qwqxt17" path="res://Resources/sheet-brute.png" id="3_ve0jc"]
-[ext_resource type="Script" path="res://Scripts/BossMeleeAI.gd" id="4_10ymr"]
+[ext_resource type="PackedScene" uid="uid://ret4dyr7kiml" path="res://Scenes/MeleeAI.tscn" id="4_j2bhg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4rsw6"]
 atlas = ExtResource("3_ve0jc")
@@ -62,11 +62,17 @@ animations = [{
 }]
 
 [node name="Enemy" instance=ExtResource("1_3sp6p")]
+speed = 160
+health = 140
+score = 10
 
-[node name="Weapon2" parent="." index="0" instance=ExtResource("2_ek7cd")]
+[node name="BossWeapon" parent="." index="0" instance=ExtResource("2_ek7cd")]
 z_index = 5
 position = Vector2(-19, -10)
 rotation = -0.270531
+collision_layer = 256
+collision_mask = 1
+damage = 20
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(-3, 2)
@@ -80,5 +86,7 @@ animation = &"attack"
 frame_progress = 1.0
 flip_h = false
 
-[node name="BossMeleeAI" type="Node" parent="." index="3"]
-script = ExtResource("4_10ymr")
+[node name="MeleeAI" parent="." index="3" instance=ExtResource("4_j2bhg")]
+attack_distance = 26.0
+
+[connection signal="attack" from="MeleeAI" to="BossWeapon" method="attack"]
