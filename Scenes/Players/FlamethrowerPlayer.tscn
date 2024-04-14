@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dayvsl8lxugrp" path="res://Scenes/Players/Player.tscn" id="1_k04kh"]
 [ext_resource type="Texture2D" uid="uid://tlc4ooyugr2q" path="res://Resources/smoker-sheet.png" id="2_t7gih"]
-[ext_resource type="Script" path="res://RayCast2D.gd" id="3_qa8ho"]
+[ext_resource type="Script" path="res://Scripts/RayCast2D.gd" id="3_qa8ho"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_av3rq"]
 atlas = ExtResource("2_t7gih")

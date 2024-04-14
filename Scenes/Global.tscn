@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Global.gd" id="1_bgriy"]
 [ext_resource type="Script" path="res://Scripts/ProjectileManager.gd" id="2_dmbal"]
-[ext_resource type="Script" path="res://Scenes/AudioManager.gd" id="3_qk6t2"]
+[ext_resource type="Script" path="res://Scripts/AudioManager.gd" id="3_qk6t2"]
 [ext_resource type="AudioStream" uid="uid://bumfjpk21upa3" path="res://Resources/Audio/Swoosh.wav" id="3_qpag8"]
 [ext_resource type="AudioStream" uid="uid://biecijtmj3d1g" path="res://Resources/Audio/Hit.mp3" id="5_tb3vg"]
 [ext_resource type="AudioStream" uid="uid://byuntjdofqrdg" path="res://Resources/Audio/Damage.wav" id="6_6pksb"]
