@@ -1,11 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://cd5s4blmj45dq"]
+[gd_scene load_steps=18 format=3 uid="uid://cd5s4blmj45dq"]
 
 [ext_resource type="Texture2D" uid="uid://48ojkwvmetnb" path="res://Resources/104857920.png" id="1_mbyfn"]
 [ext_resource type="PackedScene" uid="uid://bxfsxkkoklkbs" path="res://Scenes/Players/PlayerSelector.tscn" id="2_751al"]
 [ext_resource type="PackedScene" uid="uid://8eo51e0dyf8t" path="res://Scenes/Enemies/EnemyManager.tscn" id="3_6pbpg"]
 [ext_resource type="PackedScene" uid="uid://wbfftkcey1my" path="res://Scenes/Players/MeleePlayer.tscn" id="3_dj8yb"]
+[ext_resource type="PackedScene" uid="uid://d25qracssyhin" path="res://Scenes/Players/RangedPlayer_HR.tscn" id="4_ofefo"]
 [ext_resource type="PackedScene" uid="uid://buhicgsdv0vvw" path="res://Scenes/MenuMusic.tscn" id="5_6hv70"]
+[ext_resource type="PackedScene" uid="uid://xs1j21dahfjo" path="res://Scenes/Players/MeleePlayer_HR.tscn" id="5_mgm85"]
+[ext_resource type="PackedScene" uid="uid://to77g2ljnxxw" path="res://Scenes/Players/GrenadePlayer.tscn" id="6_6l4mf"]
 [ext_resource type="AudioStream" uid="uid://dxitarsthh8f7" path="res://Resources/Audio/IngameSong.mp3" id="6_jkxp8"]
+[ext_resource type="PackedScene" uid="uid://r3cw4a8jpm12" path="res://Scenes/Players/RangedPlayer_Mg.tscn" id="7_g661o"]
+[ext_resource type="PackedScene" uid="uid://csonv64fd8w3y" path="res://Scenes/Players/MeleePlayer_Mg.tscn" id="8_3wmeu"]
+[ext_resource type="PackedScene" uid="uid://ojayb7qy10yo" path="res://Scenes/Players/LaserPlayer.tscn" id="9_4ix8y"]
+[ext_resource type="PackedScene" uid="uid://d30xrdyvinyyb" path="res://Scenes/Players/RangedPlayer_Exec.tscn" id="10_yseeh"]
+[ext_resource type="PackedScene" uid="uid://d3mbowg6g8oa0" path="res://Scenes/Players/MeleePlayer_Exec.tscn" id="11_3ccc2"]
+[ext_resource type="PackedScene" uid="uid://b0g5w1b3orf8f" path="res://Scenes/Players/FlamethrowerPlayer.tscn" id="12_5s2s6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxupy"]
 texture = ExtResource("1_mbyfn")
@@ -2815,6 +2824,9 @@ position = Vector2(577, 318)
 
 [node name="PlayerSelector" parent="." node_paths=PackedStringArray("Player_Spawn_Point") instance=ExtResource("2_751al")]
 DefaultPlayer = ExtResource("3_dj8yb")
+HR_Players = Array[PackedScene]([ExtResource("4_ofefo"), ExtResource("5_mgm85"), ExtResource("6_6l4mf")])
+Manager_Players = Array[PackedScene]([ExtResource("7_g661o"), ExtResource("8_3wmeu"), ExtResource("9_4ix8y")])
+Executive_Players = Array[PackedScene]([ExtResource("10_yseeh"), ExtResource("11_3ccc2"), ExtResource("12_5s2s6")])
 Player_Spawn_Point = NodePath("../PlayerSpawn")
 
 [node name="EnemyManager" parent="." node_paths=PackedStringArray("spawn_points") instance=ExtResource("3_6pbpg")]

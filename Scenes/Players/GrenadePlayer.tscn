@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dayvsl8lxugrp" path="res://Scenes/Players/Player.tscn" id="1_wu0n8"]
 [ext_resource type="Texture2D" uid="uid://cg380jroehnqw" path="res://Resources/coffe-walk-sheet.png" id="3_1mowl"]
-[ext_resource type="Script" path="res://Scripts/Marker2D.gd" id="3_6s6gw"]
 [ext_resource type="Texture2D" uid="uid://cbmhlsn10hw2q" path="res://Resources/coffe-sheet.png" id="3_m1edm"]
+[ext_resource type="Script" path="res://Scripts/GrenadeHand.gd" id="4_wbbmk"]
 [ext_resource type="PackedScene" uid="uid://dvdi2jcfll7sq" path="res://Scenes/Weapons/Grenade.tscn" id="5_barh8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lh01w"]
@@ -147,6 +147,8 @@ frame_progress = 0.857342
 
 [node name="grenadehand" type="Marker2D" parent="." index="3"]
 position = Vector2(8, -6)
-scale = Vector2(-0.151721, 0.139444)
-script = ExtResource("3_6s6gw")
+scale = Vector2(-0.150698, 0.139911)
+script = ExtResource("4_wbbmk")
 grenade = ExtResource("5_barh8")
+damage = 30
+fire_rate = 0.3
