@@ -1,0 +1,154 @@
+[gd_scene load_steps=21 format=3 uid="uid://b0g5w1b3orf8f"]
+
+[ext_resource type="PackedScene" uid="uid://dayvsl8lxugrp" path="res://Scenes/Players/Player.tscn" id="1_k04kh"]
+[ext_resource type="Texture2D" uid="uid://tlc4ooyugr2q" path="res://Resources/smoker-sheet.png" id="2_t7gih"]
+[ext_resource type="Script" path="res://RayCast2D.gd" id="3_qa8ho"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_av3rq"]
+atlas = ExtResource("2_t7gih")
+region = Rect2(85, 0, 17, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anmu3"]
+atlas = ExtResource("2_t7gih")
+region = Rect2(0, 0, 17, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vus43"]
+atlas = ExtResource("2_t7gih")
+region = Rect2(51, 0, 17, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g716g"]
+atlas = ExtResource("2_t7gih")
+region = Rect2(17, 0, 17, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1rne"]
+atlas = ExtResource("2_t7gih")
+region = Rect2(68, 0, 17, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jj36"]
+atlas = ExtResource("2_t7gih")
+region = Rect2(34, 0, 17, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwd5y"]
+atlas = ExtResource("2_t7gih")
+region = Rect2(0, 32, 18, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r114m"]
+atlas = ExtResource("2_t7gih")
+region = Rect2(18, 32, 18, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oltfy"]
+atlas = ExtResource("2_t7gih")
+region = Rect2(36, 32, 18, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5f3k"]
+atlas = ExtResource("2_t7gih")
+region = Rect2(54, 32, 18, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq30r"]
+atlas = ExtResource("2_t7gih")
+region = Rect2(72, 32, 18, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qp0dj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_av3rq")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anmu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vus43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g716g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1rne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jj36")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwd5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r114m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oltfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5f3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq30r")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_cninc"]
+offsets = PackedFloat32Array(0, 0.141827, 0.794471, 1)
+colors = PackedColorArray(1, 0.959574, 0.72447, 1, 1, 0.882353, 0, 1, 1, 0, 0.392157, 1, 0, 0, 0, 0.627451)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3gur5"]
+gradient = SubResource("Gradient_cninc")
+
+[sub_resource type="Curve" id="Curve_p5e66"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.707956), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_v4k3e"]
+curve = SubResource("Curve_p5e66")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nityg"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.58
+spread = 10.0
+initial_velocity_min = 250.0
+initial_velocity_max = 500.0
+gravity = Vector3(0, 0, 0)
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_v4k3e")
+color_ramp = SubResource("GradientTexture1D_3gur5")
+hue_variation_min = 1.0
+hue_variation_max = 1.0
+turbulence_enabled = true
+turbulence_noise_strength = 0.0
+turbulence_noise_scale = 2.0
+
+[node name="Player" instance=ExtResource("1_k04kh")]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-2, 0)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+z_index = 0
+sprite_frames = SubResource("SpriteFrames_qp0dj")
+frame_progress = 0.665852
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="3"]
+position = Vector2(0, -5)
+target_position = Vector2(94, 0)
+script = ExtResource("3_qa8ho")
+
+[node name="fire" type="GPUParticles2D" parent="RayCast2D" index="0"]
+z_index = 1
+amount = 300
+process_material = SubResource("ParticleProcessMaterial_nityg")
+lifetime = 0.5

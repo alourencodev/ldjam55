@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ojayb7qy10yo"]
 
-[ext_resource type="PackedScene" uid="uid://dayvsl8lxugrp" path="res://Scenes/Player.tscn" id="1_xap6t"]
+[ext_resource type="PackedScene" uid="uid://dayvsl8lxugrp" path="res://Scenes/Players/Player.tscn" id="1_xap6t"]
 [ext_resource type="Script" path="res://Scripts/Laser.gd" id="2_0a2fp"]
 
 [node name="Player2" instance=ExtResource("1_xap6t")]
