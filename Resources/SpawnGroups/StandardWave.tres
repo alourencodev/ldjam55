@@ -22,4 +22,4 @@ script = ExtResource("4_w50e7")
 definitions = Array[ExtResource("2_jwnmt")]([SubResource("Resource_6acej"), SubResource("Resource_d6am6")])
 min_interval = 0.5
 max_interval = 2.0
-time_until_upgrade = 16.0
+time_until_upgrade = 14.0

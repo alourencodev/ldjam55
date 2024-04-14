@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_21yp0"]
 script = ExtResource("2_qn7he")
 enemy = ExtResource("1_52sdf")
-min_time_after_spawned = 1
+min_time_after_spawned = 0
 weight = 1.0
 
 [resource]
@@ -15,4 +15,4 @@ script = ExtResource("3_hg0rt")
 definitions = Array[ExtResource("2_qn7he")]([SubResource("Resource_21yp0")])
 min_interval = 0.0
 max_interval = 0.1
-time_until_upgrade = 0.2
+time_until_upgrade = 0.1
