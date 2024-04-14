@@ -34,6 +34,7 @@ func _process(delta):
 
 func apply_damage(amount):
 	health -= amount
+	get_node("/root/Global/AudioManager").hit.play()
 	if (health <= 0):
 		on_death.emit(global_position, score)
 		global.add_productivity_bucks(score);

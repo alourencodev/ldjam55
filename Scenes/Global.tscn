@@ -23,6 +23,8 @@ volume_db = 20.0
 
 [node name="Hit" type="AudioStreamPlayer2D" parent="AudioManager"]
 stream = ExtResource("5_tb3vg")
+volume_db = 10.0
+pitch_scale = 2.0
 
 [node name="Damage" type="AudioStreamPlayer2D" parent="AudioManager"]
 stream = ExtResource("6_6pksb")
