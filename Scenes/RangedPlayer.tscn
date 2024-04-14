@@ -1,0 +1,101 @@
+[gd_scene load_steps=16 format=3 uid="uid://dtqpymainn8c2"]
+
+[ext_resource type="PackedScene" uid="uid://gs36jhhcvljj" path="res://Scenes/Player.tscn" id="1_fyihv"]
+[ext_resource type="Texture2D" uid="uid://bfdj05j50nfsi" path="res://Resources/phoneguy-attack-sheet.png" id="2_gxcqg"]
+[ext_resource type="Script" path="res://Scripts/Ranged.gd" id="2_hnmsu"]
+[ext_resource type="Texture2D" uid="uid://b7cqfyf6f2a4t" path="res://Resources/phoneguy-sheet.png" id="2_j6bnc"]
+[ext_resource type="PackedScene" uid="uid://bhr8ht5ere22f" path="res://Scenes/bullet.tscn" id="3_wvidk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkwhi"]
+atlas = ExtResource("2_gxcqg")
+region = Rect2(4, 29, 17, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lj72"]
+atlas = ExtResource("2_gxcqg")
+region = Rect2(33, 29, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf4b3"]
+atlas = ExtResource("2_gxcqg")
+region = Rect2(69, 29, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqkwf"]
+atlas = ExtResource("2_j6bnc")
+region = Rect2(83, 0, 16, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psawv"]
+atlas = ExtResource("2_j6bnc")
+region = Rect2(0, 0, 16, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4miq8"]
+atlas = ExtResource("2_j6bnc")
+region = Rect2(16, 0, 16, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwwou"]
+atlas = ExtResource("2_j6bnc")
+region = Rect2(32, 0, 16, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyoy8"]
+atlas = ExtResource("2_j6bnc")
+region = Rect2(49, 0, 17, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3olqd"]
+atlas = ExtResource("2_j6bnc")
+region = Rect2(67, 0, 16, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dyic2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkwhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lj72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf4b3")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqkwf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psawv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4miq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwwou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyoy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3olqd")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="RangedPlayer" instance=ExtResource("1_fyihv")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-0.5, -0.5)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_dyic2")
+
+[node name="Muzzle" type="Marker2D" parent="." index="3"]
+position = Vector2(-8, -11)
+script = ExtResource("2_hnmsu")
+bullet = ExtResource("3_wvidk")
