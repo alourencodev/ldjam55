@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dayvsl8lxugrp" path="res://Scenes/Player.tscn" id="1_06hr2"]
 [ext_resource type="Texture2D" uid="uid://scxt76ycnlvb" path="res://Resources/janitor-testsheet.png" id="2_v6aal"]
-[ext_resource type="Script" path="res://Scenes/Area2D.gd" id="3_4a23p"]
+[ext_resource type="Script" path="res://Scripts/Weapon.gd" id="3_4a23p"]
 [ext_resource type="Texture2D" uid="uid://bvxecakdpxlp" path="res://Resources/broom-weapon.png" id="3_041xw"]
 [ext_resource type="Texture2D" uid="uid://coxgimuunv48b" path="res://Resources/janitor-sheet.png" id="3_v5tsy"]
 
@@ -127,11 +127,11 @@ _data = {
 "swing": SubResource("Animation_84p3h")
 }
 
-[node name="Player" instance=ExtResource("1_06hr2")]
+[node name="Player2" instance=ExtResource("1_06hr2")]
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_gpkc0")
-animation = &"attack"
+frame_progress = 0.388369
 
 [node name="weapon" type="Area2D" parent="." index="3"]
 script = ExtResource("3_4a23p")

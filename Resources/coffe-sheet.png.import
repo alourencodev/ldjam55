@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7cqfyf6f2a4t"
-path="res://.godot/imported/phoneguy-sheet.png-1289e1edd08ab41334a1a0be6ef6e3b8.ctex"
+uid="uid://cbmhlsn10hw2q"
+path="res://.godot/imported/coffe-sheet.png-261bc3e99d157e352fb07db571e59b00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/phoneguy-sheet.png"
-dest_files=["res://.godot/imported/phoneguy-sheet.png-1289e1edd08ab41334a1a0be6ef6e3b8.ctex"]
+source_file="res://Resources/coffe-sheet.png"
+dest_files=["res://.godot/imported/coffe-sheet.png-261bc3e99d157e352fb07db571e59b00.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7cqfyf6f2a4t"
-path="res://.godot/imported/phoneguy-sheet.png-1289e1edd08ab41334a1a0be6ef6e3b8.ctex"
+uid="uid://bfdj05j50nfsi"
+path="res://.godot/imported/phoneguy-attack-sheet.png-42535e47514da5757ee4c1fe70a25635.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/phoneguy-sheet.png"
-dest_files=["res://.godot/imported/phoneguy-sheet.png-1289e1edd08ab41334a1a0be6ef6e3b8.ctex"]
+source_file="res://Resources/phoneguy-attack-sheet.png"
+dest_files=["res://.godot/imported/phoneguy-attack-sheet.png-42535e47514da5757ee4c1fe70a25635.ctex"]
 
 [params]
 

@@ -1,26 +1,47 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgf1e4oyelhyd"]
+[gd_scene load_steps=12 format=3 uid="uid://cgf1e4oyelhyd"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_tily0"]
-[ext_resource type="Texture2D" uid="uid://c0u83hhwfvojy" path="res://Resources/Enemy.png" id="2_733u8"]
-[ext_resource type="PackedScene" uid="uid://bbka7nqe77a14" path="res://Scenes/Weapon.tscn" id="3_8hwll"]
+[ext_resource type="Texture2D" uid="uid://dh2e1yitos3b5" path="res://Resources/zombie-sheet.png" id="2_vxjw2"]
+[ext_resource type="PackedScene" path="res://Scenes/Weapon.tscn" id="3_8hwll"]
 [ext_resource type="Script" path="res://Scripts/MeleeAI.gd" id="4_6qklj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nxh5x"]
-atlas = ExtResource("2_733u8")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_p88jl"]
+atlas = ExtResource("2_vxjw2")
+region = Rect2(67, 0, 16, 29)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y1qpd"]
-atlas = ExtResource("2_733u8")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymd2a"]
+atlas = ExtResource("2_vxjw2")
+region = Rect2(49, 0, 16, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmwn1"]
+atlas = ExtResource("2_vxjw2")
+region = Rect2(32, 0, 16, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mqyk"]
+atlas = ExtResource("2_vxjw2")
+region = Rect2(16, 0, 16, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jysp6"]
+atlas = ExtResource("2_vxjw2")
+region = Rect2(0, 0, 16, 29)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ch7og"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nxh5x")
+"texture": SubResource("AtlasTexture_p88jl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y1qpd")
+"texture": SubResource("AtlasTexture_ymd2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmwn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mqyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jysp6")
 }],
 "loop": true,
 "name": &"Walk",
@@ -35,6 +56,9 @@ z_index = 1
 collision_layer = 2
 collision_mask = 8
 script = ExtResource("1_tily0")
+speed = null
+health = null
+score = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -42,7 +66,8 @@ texture_filter = 1
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_ch7og")
 animation = &"Walk"
-frame_progress = 0.0694468
+frame = 3
+frame_progress = 0.0173614
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -2)

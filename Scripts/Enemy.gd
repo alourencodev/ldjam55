@@ -19,7 +19,7 @@ func _process(delta):
 
 	const target_distance_threshold = 80.0
 
-	var direction = (target.global_position - global_position)
+var direction = (target.global_position - global_position)
 	var distance_to_target_sqr = direction.length_squared()
 	if (distance_to_target_sqr <= target_distance_threshold):
 		return
