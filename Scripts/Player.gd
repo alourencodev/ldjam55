@@ -37,7 +37,7 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func handle_hit(damage_amount):
-	apply_damage(damage_amount)
+	call_deferred("apply_damage", damage_amount)
 
 func apply_damage(amount):
 	health -= amount

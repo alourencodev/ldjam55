@@ -2,44 +2,68 @@ extends Node
 
 class_name EnemyManager;
 
-@export var enemy_scene : Resource			        # TODO: Make this an array of scenes. We might need a way to define which enemies are more likely than others
-@export var spawn_points : Array[Node2D]			    # We'll take the position of these nodes to spawn the enemies akt
+@export var spawn_points : Array[Marker2D]
+@export var groups : Array[SpawnGroup]		
 @export var warmup_seconds = 5.0					# Seconds to start spawning
-@export var spawn_min_interval = 3.0		        # Minimum amount of seconds between spawns
-@export var spawn_max_interval = 4.0		        # Maximum amount of seconds between spawns
 
-# TODO: Difficulty progression
-
+@onready var current_group_index = 0
 @onready var time_to_spawn = warmup_seconds
+@onready var time_since_group_upgrade = -warmup_seconds
+
+var time_since_last_spawn = 0.0
+var current_group : SpawnGroup
+
+
+func _ready():
+	assert(spawn_points.size() > 0, "Please define spawn points in EnemyManager")
+	assert(!groups.is_empty(), "Please define spawn groups in EnemyManager")
+
+	current_group = groups[0]
+
+
+func _process(delta):
+	if get_player() == null:
+		return
+
+	# Update timers
+	time_since_last_spawn += delta
+	time_since_group_upgrade += delta
+
+	# Check for spawn
+	if time_to_spawn <= 0.0:
+		time_to_spawn = calc_time_to_spawn()
+		spawn_enemy();
+	else:
+		time_to_spawn -= delta
+
+	# Check for group Updates
+	if (time_since_group_upgrade >= current_group.time_until_upgrade):
+		if groups.size() > (current_group_index + 1):
+			current_group_index += 1
+			current_group = groups[current_group_index]
+			print("Upgrading Spawn group to group ", current_group_index)
+
+
+func spawn_enemy():
+	var enemy = current_group.pick_spawn_enemy(time_since_last_spawn)
+	if (enemy == null):
+		return
+
+	# Pick spawn point
+	var spawn_point_index = randi() % spawn_points.size()
+	var spawn_point = spawn_points[spawn_point_index]
+
+	# Pick enemy
+	var enemy_instance = enemy.instantiate()
+	enemy_instance.position = spawn_point.position
+	add_child(enemy_instance)
+
+	time_since_last_spawn = 0.0
 
 
 func get_player():
 	return get_node("/root/Global").player
 
-func _ready():
-	assert(spawn_points.size() > 0)
-	assert(enemy_scene != null)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if get_player() == null:
-		pass
-
-	time_to_spawn -= delta
-
-	if time_to_spawn <= 0.0:
-		time_to_spawn = randf_range(spawn_min_interval, spawn_max_interval)
-		spawn_enemy();
-
-	pass
-
-
-func spawn_enemy():
-	# TODO: Pick an enemy depending on the game stage
-
-	var spawn_point_index = randi() % spawn_points.size()
-	var spawn_point = spawn_points[spawn_point_index]
-
-	var enemy_instance = enemy_scene.instantiate()
-	enemy_instance.position = spawn_point.position
-	add_child(enemy_instance)
+func calc_time_to_spawn():
+	return randf_range(current_group.min_interval, current_group.max_interval)
