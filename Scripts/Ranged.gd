@@ -4,6 +4,7 @@ extends Marker2D
 @export var bullet_speed = 750
 @export var fire_rate = 0.0
 @export var damage = 10
+@onready var _animated_sprite = $"../AnimatedSprite2D"
 
 var time_until_last_fire = fire_rate
 
@@ -14,6 +15,7 @@ func _process(delta):
 
 	if Input.is_action_just_pressed("Action"):
 		shoot()
+		_animated_sprite.play("attack")
 		time_until_last_fire = 0.0
 
 func shoot():

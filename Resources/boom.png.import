@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7cqfyf6f2a4t"
-path="res://.godot/imported/phoneguy-sheet.png-1289e1edd08ab41334a1a0be6ef6e3b8.ctex"
+uid="uid://b1ptx2rhpk5ya"
+path="res://.godot/imported/boom.png-14f838c568670efb0c35dfc4ff61d9d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/phoneguy-sheet.png"
-dest_files=["res://.godot/imported/phoneguy-sheet.png-1289e1edd08ab41334a1a0be6ef6e3b8.ctex"]
+source_file="res://Resources/boom.png"
+dest_files=["res://.godot/imported/boom.png-14f838c568670efb0c35dfc4ff61d9d1.ctex"]
 
 [params]
 

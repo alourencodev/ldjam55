@@ -5,7 +5,7 @@ var speed = 350
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action("Action"):
-		$grenade.attack
+		attack()
 
 func attack():
 	anim.play("grenade")
