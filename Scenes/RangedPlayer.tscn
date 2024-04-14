@@ -99,3 +99,4 @@ sprite_frames = SubResource("SpriteFrames_dyic2")
 position = Vector2(-8, -11)
 script = ExtResource("2_hnmsu")
 bullet = ExtResource("3_wvidk")
+fire_rate = 0.5
