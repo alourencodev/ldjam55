@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Ldjam 55"
+config/name="Layoff Lift"
 run/main_scene="res://Screens/SelectionScreen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -18,6 +18,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://Scenes/Global.tscn"
+
+[display]
+
+window/size/resizable=false
 
 [input]
 
@@ -63,3 +67,4 @@ Action={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

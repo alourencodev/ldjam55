@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dayvsl8lxugrp"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_4qh64"]
-[ext_resource type="Texture2D" uid="uid://xpguqqgoj4e6" path="res://Resources/phoneguy-sheet.png" id="2_73j8b"]
+[ext_resource type="Texture2D" uid="uid://b7cqfyf6f2a4t" path="res://Resources/phoneguy-sheet.png" id="2_73j8b"]
 [ext_resource type="PackedScene" uid="uid://cdi44im7jev7x" path="res://Screens/EndScene.tscn" id="2_kr0gp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojaps"]

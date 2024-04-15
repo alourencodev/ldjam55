@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://cg8gt3j5ph8pc"]
+[gd_scene load_steps=17 format=3 uid="uid://cg8gt3j5ph8pc"]
 
-[ext_resource type="Texture2D" uid="uid://btmn73a6sc6dl" path="res://Resources/sprite_gray.png" id="1_s0nsq"]
+[ext_resource type="Texture2D" uid="uid://i4klgcrrxuuv" path="res://Resources/background.png" id="1_bt71i"]
 [ext_resource type="Texture2D" uid="uid://b0lxob3ncc2dq" path="res://Resources/map.png" id="2_c1u2g"]
 [ext_resource type="Texture2D" uid="uid://wrxuspqfcwp8" path="res://Resources/PlaceholderBall.png" id="3_4mk2y"]
 [ext_resource type="Script" path="res://Scripts/SummonerSelector.gd" id="4_xkktw"]
@@ -9,6 +9,9 @@
 [ext_resource type="Script" path="res://Scripts/SceneChanger.gd" id="6_eo5vs"]
 [ext_resource type="Script" path="res://Scripts/PointsLabel.gd" id="7_pcvnb"]
 [ext_resource type="PackedScene" uid="uid://buhicgsdv0vvw" path="res://Scenes/MenuMusic.tscn" id="9_xcfno"]
+[ext_resource type="Texture2D" uid="uid://dqhbkv1yvgcuh" path="res://Resources/phone.png" id="11_iseqi"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oh0l5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lxgxc"]
 font_size = 42
@@ -36,39 +39,58 @@ font_size = 24
 
 [node name="SelectionScreen" type="Node"]
 
-[node name="Background" type="Panel" parent="."]
+[node name="Image" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -641.0
+offset_top = -360.0
+offset_right = 639.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bt71i")
+
+[node name="Canvas" type="Panel" parent="."]
+material = SubResource("CanvasItemMaterial_oh0l5")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="Phone" type="TextureRect" parent="Canvas"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -369.0
+offset_right = 656.0
+offset_bottom = 655.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_iseqi")
+
+[node name="GridContainer" type="GridContainer" parent="Canvas/Phone"]
+layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -230.0
-offset_right = 230.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1, 1.00414)
-texture = ExtResource("1_s0nsq")
-region_rect = Rect2(6.266, 2.99812, 9.734, 13.0019)
-
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = -10.0
+offset_left = -181.0
+offset_top = 189.0
+offset_right = 169.0
+offset_bottom = -145.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="Label" parent="NinePatchRect/GridContainer"]
+[node name="Title" type="Label" parent="Canvas/Phone/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -76,13 +98,13 @@ text = "Layoff Lift"
 label_settings = SubResource("LabelSettings_lxgxc")
 horizontal_alignment = 1
 
-[node name="Map" type="TextureRect" parent="NinePatchRect/GridContainer"]
+[node name="Map" type="TextureRect" parent="Canvas/Phone/GridContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 texture = ExtResource("2_c1u2g")
 expand_mode = 5
 
-[node name="TierList" type="ItemList" parent="NinePatchRect/GridContainer"]
+[node name="TierList" type="ItemList" parent="Canvas/Phone/GridContainer"]
 layout_mode = 2
 allow_search = false
 auto_height = true
@@ -90,7 +112,7 @@ fixed_icon_size = Vector2i(16, 16)
 script = ExtResource("4_xkktw")
 tiers = Array[ExtResource("5_uspdl")]([SubResource("Resource_2dxxv"), SubResource("Resource_afg5o"), SubResource("Resource_l7uti")])
 
-[node name="TextureButton" type="TextureButton" parent="NinePatchRect/GridContainer"]
+[node name="TextureButton" type="TextureButton" parent="Canvas/Phone/GridContainer"]
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("5_761m1")
@@ -102,7 +124,7 @@ stretch_mode = 3
 script = ExtResource("6_eo5vs")
 scene_name = "main.tscn"
 
-[node name="Label" type="Label" parent="NinePatchRect/GridContainer/TextureButton"]
+[node name="Label" type="Label" parent="Canvas/Phone/GridContainer/TextureButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -125,6 +147,6 @@ label = "PB$"
 
 [node name="MenuMusic" parent="." instance=ExtResource("9_xcfno")]
 
-[connection signal="item_selected" from="NinePatchRect/GridContainer/TierList" to="NinePatchRect/GridContainer/TierList" method="_on_item_selected"]
-[connection signal="item_selected" from="NinePatchRect/GridContainer/TierList" to="NinePatchRect/GridContainer/TextureButton" method="_enable"]
-[connection signal="pressed" from="NinePatchRect/GridContainer/TextureButton" to="NinePatchRect/GridContainer/TierList" method="_on_item_accepted"]
+[connection signal="item_selected" from="Canvas/Phone/GridContainer/TierList" to="Canvas/Phone/GridContainer/TierList" method="_on_item_selected"]
+[connection signal="item_selected" from="Canvas/Phone/GridContainer/TierList" to="Canvas/Phone/GridContainer/TextureButton" method="_enable"]
+[connection signal="pressed" from="Canvas/Phone/GridContainer/TextureButton" to="Canvas/Phone/GridContainer/TierList" method="_on_item_accepted"]

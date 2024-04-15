@@ -1,10 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdi44im7jev7x"]
+[gd_scene load_steps=6 format=3 uid="uid://cdi44im7jev7x"]
 
+[ext_resource type="Texture2D" uid="uid://i4klgcrrxuuv" path="res://Resources/background.png" id="1_8gro5"]
 [ext_resource type="Texture2D" uid="uid://bpx8im540veqm" path="res://Resources/BlueButtonPlaceholder.png" id="1_do8qu"]
 [ext_resource type="Script" path="res://Scripts/SceneChanger.gd" id="2_jedvt"]
 [ext_resource type="PackedScene" uid="uid://buhicgsdv0vvw" path="res://Scenes/MenuMusic.tscn" id="3_qualb"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fbfyj"]
+
 [node name="EndScene" type="Node"]
+
+[node name="Image" type="Sprite2D" parent="."]
+texture = ExtResource("1_8gro5")
+centered = false
+
+[node name="Canvas" type="Panel" parent="."]
+material = SubResource("CanvasItemMaterial_fbfyj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureButton" type="TextureButton" parent="."]
 anchors_preset = 8

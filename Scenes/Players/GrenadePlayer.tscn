@@ -151,4 +151,4 @@ scale = Vector2(-0.150698, 0.139911)
 script = ExtResource("4_wbbmk")
 grenade = ExtResource("5_barh8")
 damage = 30
-fire_rate = 0.3
+fire_rate = 0.6
